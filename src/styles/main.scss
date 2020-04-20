@@ -1,0 +1,25 @@
+@import './colors';
+@import './mixins';
+@import './reset';
+@import './fonts';
+
+@import './components/header';
+@import './components/slider';
+
+.body {
+  font-family: NotoSans;
+  color: $text;
+  font-size: 14px;
+}
+
+.general-container {
+  height: 100vh;
+  background: $background-main;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.main {
+  flex-grow: 1;
+  background: $background-secondary;
+}

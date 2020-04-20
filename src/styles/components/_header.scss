@@ -1,0 +1,227 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 100%;
+  padding: 24px 36px;
+  @include border(right);
+
+  &__logo {
+    margin-bottom: 36px;
+
+    &-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    &-img {
+      width: 80%;
+    }
+  }
+
+  &__products-menu {
+    position: relative;
+    margin-bottom: 48px;
+    padding: 24px 0;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $brand-light;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $brand-light;
+    }
+  }
+
+  &__contacts {
+    margin-top: auto;
+  }
+}
+
+.products-menu {
+  position: relative;
+
+  &__helper {
+    position: absolute;
+    right: -36px;
+    top: 0;
+    display: block;
+    height: 100%;
+    width: 36px;
+    background: $background-main;
+    z-index: 1;
+  }
+
+  &__item {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 3px;
+      top: 50%;
+      margin-top: -1.5px;
+      left: -60px;
+      background-color: $brand;
+      z-index: 10;
+      transition: left 0.3s;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 3px;
+      top: 50%;
+      margin-top: -1.5px;
+      left: -42px;
+      background-color: $dull;
+      z-index: 9;
+      transition: left 0.3s;
+    }
+
+    &:hover .products-menu__link {
+      color: $brand;
+    }
+
+    &:hover:before {
+      left: -42px;
+    }
+
+    &:hover .products-menu-sub {
+      opacity: 1;
+      left: 283px;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 12px 0;
+    font-size: 17px;
+    transition: color 0.3s;
+  }
+
+  &-sub {
+    position: fixed;
+    opacity: 0;
+    left: -200%;
+    // opacity: 1;
+    // left: 319px;
+    top: 1;
+    transition: opacity 0.3s, transform 0.3s;
+    min-height: 360px;
+    padding: 36px;
+    @include border(top);
+    @include border(right);
+    @include border(bottom);
+    background: $background-main;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -48px;
+      top: 0;
+      height: 100%;
+      width: 48px;
+    }
+
+    &__item {
+      width: 144px;
+      margin-left: 24px;
+
+      &:hover .products-menu-sub__link {
+        color: $brand;
+      }
+    }
+
+    &__link {
+      display: block;
+      font-size: 16px;
+      padding: 6px;
+      @include border(bottom);
+      transition: color 0.2s;
+    }
+  }
+
+  &-sub2 {
+    margin-top: 12px;
+
+    &__item {
+      padding: 6px;
+
+      &:hover .products-menu-sub2__link {
+        color: $brand;
+      }
+    }
+
+    &__link {
+      display: block;
+      transition: color 0.2s;
+    }
+  }
+}
+
+.main-menu {
+  margin-bottom: 48px;
+
+  &__link {
+    display: block;
+    padding: 12px 0;
+    font-size: 16px;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+.header-contacts {
+  &__item {
+    margin-bottom: 8px;
+  }
+
+  &__link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.contacts-messager {
+  &__link {
+    display: inline-block;
+    margin-right: 12px;
+
+    &:hover .contacts-messager__icon_telegram {
+      color: $telegram;
+    }
+    &:hover .contacts-messager__icon_whatsapp {
+      color: $whatsapp;
+    }
+    &:hover .contacts-messager__icon_viber {
+      color: $viber;
+    }
+  }
+
+  &__icon {
+    font-size: 24px;
+    transition: color 0.2s;
+  }
+}
