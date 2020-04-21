@@ -7,16 +7,26 @@
   }
 }
 
-@mixin border($side: all, $thickness: 1px) {
+@mixin border($side: all, $thickness: 1px, $color: $dull) {
   @if $side == all {
-    border: $thickness solid $dull;
+    border: $thickness solid $color;
   } @else if $side == left {
-    border-left: $thickness solid $dull;
+    border-left: $thickness solid $color;
   } @else if $side == right {
-    border-right: $thickness solid $dull;
+    border-right: $thickness solid $color;
   } @else if $side == bottom {
-    border-bottom: $thickness solid $dull;
+    border-bottom: $thickness solid $color;
   } @else if $side == top {
-    border-top: $thickness solid $dull;
+    border-top: $thickness solid $color;
+  }
+}
+
+@mixin box-shadow($color: $dull, $hover: 'true') {
+  box-shadow: 0px 1px 4px 0 $dull;
+  @if $hover != 'no-hover' {
+    transition: box-shadow 0.3s;
+     &:hover {
+      box-shadow: 0px 1px 12px 0 $dull;
+    }
   }
 }

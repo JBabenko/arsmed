@@ -1,0 +1,320 @@
+@import '../smart-grid';
+
+.product-list {
+  @include row-flex();
+  justify-content: center;
+  @include md(justify-content, space-evenly);
+  // @include lg(justify-content, flex-start);
+}
+
+.product-card {
+  // @include border();
+  border-radius: 3px;
+  @include box-shadow();
+  @include col();
+  @include size(12);
+  @include size-sm(6);
+  @include size-md(6);
+  @include size-lg(3);
+  min-width: 240px;
+  max-width: 288px;
+  margin-bottom: 48px;
+  padding: 24px 24px 12px 24px;
+
+  &__img {
+    width: 100%;
+  }
+
+  &__title {
+    padding: 12px 0 24px;
+    @include border(bottom, 1px, $dull);
+
+    &-text {
+      font-size: 16px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $brand;
+      }
+    }
+
+    &-select {
+      outline: none;
+      border: none;
+      @include border(bottom);
+      cursor: pointer;
+      padding: 4px;
+      margin-top: 2px;
+      font-size: 16px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    // @include border(top, 1px, $brand-light);
+  }
+
+  &__price {
+    &-text {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      line-height: 24px;
+      margin: 3px 0;
+
+      &_secondary {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__currency-icon {
+    font-size: 20px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    margin-right: 6px;
+
+    &_primary {
+      font-size: 24px;
+    }
+  }
+
+  &__cart {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 54px;
+    background: $brand;
+    @include border('all', 1px, $brand);
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &-icon {
+      font-size: 24px;
+      color: $background-secondary;
+      transition: color 0.2s;
+    }
+
+    &:hover {
+      background-color: $brand-light;
+    }
+
+    &:hover .product-card__cart-icon {
+      color: $brand;
+    }
+  }
+}
+
+
+// .item-container-wrapper {
+// 	position: relative;
+// 	margin-bottom: 25px;
+// }
+// .item-container-1 {
+// 	padding: 15px;
+// 	width: 246px;
+// 	height: 300px;
+// 	border: 1px solid #E5E4E4;
+// 	transition: height 0.3s;
+// 	background: #fff;
+// 	z-index: 300;
+// 	border-radius: 3px;
+// 	transition: 0.2s;
+// }
+// .item-container-1:first-child {
+// 	margin: 0;
+// }
+// .item-container-1:hover {
+// 	border-color: #79b842;
+// }
+// .item-container-2 {
+// 	position: absolute;
+// 	top: 330px;
+// 	left: 0;
+// 	width: 246px;
+// 	padding: 15px;
+// 	padding-top: 0;
+// 	border: 1px solid #E5E4E4;
+// 	border-top: none;
+// 	background: #fff;
+// 	transform: translateY(-250px);
+// 	opacity: 0;
+// 	border-radius: 3px;
+// 	z-index: 400;
+// 	border-color: #E5E4E4;
+// 	transition: border-color 0.2s;
+// }
+
+// .item-description {
+// 	font-size: 13px;
+// 	font-weight: normal;
+// 	margin-top: 15px;
+// 	line-height: 1.4;
+// 	color: #727171;
+// }
+// .item-container-2 ul,
+// .item-container-2-m ul{
+// 	list-style-type: disc;
+// 	margin-left: 13px;
+// 	font-size: 12px;
+// 	line-height: 1.4;
+// 	color: #727171;
+// }
+// .item-container-2-m {
+// 	display: none;
+// }
+// .item-container-2 span {
+// 	font-size: 9px;
+// }
+// .item-container-wrapper:hover .item-container-2 {
+// 	transform: translateY(0px);
+// 	opacity: 1;
+// 	border-color: #79b842;
+// }
+// .item-image {
+// 	display: table-cell;
+// 	height: 200px;
+// 	width: 244px;
+// 	vertical-align: middle;
+// 	text-align: center;
+// 	transition: 0.2s;
+// }
+// .item-image img {
+// 	max-height: 220px;
+// }
+// .item-title,
+// .item-size {
+// 	color: #383636;
+// 	font-size: 14px;
+// 	margin-bottom: 2px;
+// }
+// .item-title {
+// 	display: inline-block;
+// 	text-decoration: none;
+// 	font-weight: normal;
+// 	transition: 0.2s;
+// }
+// .item-title:hover {
+// 	color: #79b842;
+// }
+// .item-size {
+// 	font-family: 'Gotham Pro';
+// 	border: none;
+// 	border-bottom: 1px solid #292929;
+// 	cursor: pointer;
+// 	background-color: #fff;
+// 	border: 1px solid #E5E4E4;
+// 	border-radius: 4px;
+// 	padding: 3px;
+// }
+// .item-size:focus {
+// 	outline: none;
+// }
+// .item-price {
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: space-around;
+// 	text-align: left;
+// 	position: absolute;
+// 	left: 0;
+// 	bottom: 10px;
+// 	margin-top: 30px;
+// 	color: #ffffff;
+// 	min-width: 95px;
+// 	height: 35px;
+// 	background: #79b842;
+// 	border-radius: 0 3px 3px 0;
+// 	padding: 5px 5px 5px 20px;
+// }
+// .item-price:hover ~ .item-container-1 {
+// 	border-color: #79b842;
+// }
+// .item-cart {
+// 	position: absolute;
+// 	right: 0;
+// 	bottom: 10px;
+// 	overflow: hidden;
+// }
+// .item-cart-button {
+// 	position: relative;
+// 	background: #949393;
+// 	border-radius: 3px 0 0 3px;
+// 	min-width: 80px;
+// 	height: 45px;
+// 	border: none;
+// 	cursor: pointer;
+// 	transform: translateX(10px);
+// 	transition: 0.2s;
+// }
+// .item-cart:hover .item-cart-button {
+// 	transform: translateX(0px);
+// 	background: #a5a5a5;
+// }
+// .item-cart:hover ~ .item-container-1 {
+// 	border-color: #79b842;
+// }
+// .items-in-cart {
+// 	position: absolute;
+// 	font-family: 'Gotham Pro';
+// 	font-size: 20px;
+// 	color: #ffffff;
+// 	right: 16px;
+// 	bottom: 11px;
+// }
+// .item-card-in-cart {
+// 	position: absolute;
+// 	font-family: 'Gotham Pro';
+// 	font-size: 16px;
+// 	right: 20px;
+// 	bottom: -23px;
+// 	font-weight: 500;
+// }
+// .item-card-in-cart-desc {
+// 	position: absolute;
+// 	font-family: 'Gotham Pro';
+// 	font-size: 15px;
+// 	right: 40px;
+// 	bottom: -23px;
+// }
+// .icon-korzina {
+// 	font-size: 23px;
+// 	color: #ffffff;
+// 	margin-right: 10px;
+// }
+// .item-container-2:hover ~ .item-container-1 {
+// 	border-color: #79b842;
+// }
+// .price-rubles {
+// 	font-size: 17px;
+// 	font-weight: 500;
+// }
+
+// .price-currency {
+// 	font-size: 12px;
+// }
+// .icon-cart {
+// 	display: block;
+// 	width: 200px;
+// 	padding: 8px 0px;
+// 	border: 1px solid #E5E4E4;
+// 	font-size: 17px;
+// 	text-align: center;
+// 	background: #F2F2F2;
+// 	color: #79b842;
+// 	margin: 15px auto 0;
+// 	text-decoration: none;
+// 	transition: 0.2s;
+// }
+// .icon-cart span {
+// 	font-family: 'Noto Sans';
+// }
+// .icon-cart:hover {
+// 	color: #fff;
+// 	background: #79b842;
+// }

@@ -1,10 +1,14 @@
 .header {
-  display: flex;
-  flex-direction: column;
+  flex-shrink: 0;
   width: 320px;
-  height: 100%;
-  padding: 24px 36px;
   @include border(right);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 36px;
+    height: 100vh;
+  }
 
   &__logo {
     margin-bottom: 36px;
@@ -102,7 +106,7 @@
 
     &:hover .products-menu-sub {
       opacity: 1;
-      left: 283px;
+      left: 319px;
     }
   }
 

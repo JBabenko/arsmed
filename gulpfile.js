@@ -82,24 +82,36 @@ function clean() {
 }
 
 function grid(done) {
-    smartgrid('./src/scss', {
+    smartgrid('./src/styles', {
         outputStyle: 'scss', /* less || scss || sass || styl */
         columns: 12, /* number of grid columns */
         offset: '30px', /* gutter width px || % || rem */
-        mobileFirst: false, /* mobileFirst ? 'min-width' : 'max-width' */
+        mobileFirst: true, /* mobileFirst ? 'min-width' : 'max-width' */
         container: {
-            maxWidth: '1170px', /* max-width оn very large screen */
+            minWidth: '320px', /* max-width оn very large screen */
             fields: '80px' /* side fields */
         },
         breakPoints: {
-            lg: {
-                width: '962px',
-                fields: '40px'
+            sm: {
+                width: '768px',
+                fields: '24px',
+                offset: '24px'
             },
             md: {
-                width: '750px',
-                fields: '40px'
-            }
+                width: '1024px',
+                fields: '24px',
+                offset: '24px'
+            },
+            lg: {
+                width: '1440px',
+                fields: '48px',
+                offset: '48px'
+            },
+            xlg: {
+                width: '1920px',
+                fields: '96px',
+                offset: '96px'
+            },
             /* 
             We can create any quantity of break points.
     
