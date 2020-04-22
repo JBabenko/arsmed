@@ -6,6 +6,7 @@
 @import './components/header';
 @import './components/slider';
 @import './components/products';
+@import './components/news';
 
 .body {
   font-family: NotoSans;
@@ -20,10 +21,13 @@
   overflow-x: hidden;
 }
 
+.content-container {
+  padding: 0 48px;
+}
+
 .main {
   flex-grow: 1;
   background: $background-secondary;
-  padding: 48px;
 }
 
 .section-title {

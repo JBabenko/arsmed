@@ -1,0 +1,46 @@
+.news-block {
+  &__item {
+    padding: 0 24px 24px;
+  }
+}
+
+.news-item {
+  display: flex;
+
+  &__picture {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: 120px;
+
+    &:hover + .news-item__content .news-item__title-text {
+      color: $brand;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    &-text {
+      font-size: 18px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $brand;
+      }
+    }
+    &-date {
+      color: $text-light;
+    }
+  }
+}
