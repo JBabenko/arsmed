@@ -147,10 +147,6 @@
     &__item {
       width: 144px;
       margin-left: 24px;
-
-      &:hover .products-menu-sub__link {
-        color: $brand;
-      }
     }
 
     &__link {
@@ -159,6 +155,10 @@
       padding: 6px;
       @include border(bottom);
       transition: color 0.2s;
+
+      &:hover {
+        color: $brand;
+      }
     }
   }
 

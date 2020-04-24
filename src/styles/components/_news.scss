@@ -2,6 +2,16 @@
   &__item {
     padding: 0 24px 24px;
   }
+
+  &__show-all-link {
+    color: $brand;
+    font-size: 18px;
+    padding-left: 24px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .news-item {
