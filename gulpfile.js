@@ -41,6 +41,24 @@ function styles() {
                 .pipe(browserSync.stream());
 }
 
+function editorStyles() {
+    return gulp.src('src/styles/editor.scss')
+                .pipe(sass({
+                    includePaths: require('node-normalize-scss').includePaths
+                }))
+                .pipe(concat('editor.css'))
+                .pipe(gcmq())
+                .pipe(autoprefixer({
+                    overrideBrowserslist: ['> 0.1%'],
+                    cascade: false
+                }))
+                .pipe(cleanCSS({
+                    level: 2
+                }))
+                .pipe(gulp.dest('build/css'))
+                .pipe(browserSync.stream());
+}
+
 function script() {
     return gulp.src(jsFiles)
                 .pipe(concat('script.js'))
@@ -73,6 +91,7 @@ function watch() {
     });
 
     gulp.watch('src/styles/**/*.scss', styles);
+    gulp.watch('src/styles/editor.scss', editorStyles);
     gulp.watch('src/js/**/*.js', script);
     gulp.watch('src/**/*.html', html);
 }
@@ -128,6 +147,7 @@ function grid(done) {
 
 gulp.task('html', html);
 gulp.task('styles', styles);
+gulp.task('editorStyles', editorStyles);
 gulp.task('script', script);
 gulp.task('images', images);
 gulp.task('fonts', fonts);
@@ -135,7 +155,7 @@ gulp.task('watch', watch);
 gulp.task('grid', grid);
 
 gulp.task('build', gulp.series(clean,
-                        gulp.parallel(html, styles, script, images, fonts)
+                        gulp.parallel(html, styles, editorStyles, script, images, fonts)
                     ));
 
 gulp.task('dev', gulp.series('build', 'watch'));

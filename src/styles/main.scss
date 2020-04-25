@@ -3,6 +3,8 @@
 @import './reset';
 @import './fonts';
 
+@import './editor';
+
 @import './components/header';
 @import './components/slider';
 @import './components/products';
@@ -35,21 +37,4 @@
   margin-bottom: 24px;
   font-size: 26px;
   @include border(bottom, 1px, $brand);
-}
-
-.text-block {
-  & h1 {
-    font-size: 27px;
-    margin-bottom: 16px;
-  }
-
-  & h2 {
-    margin-bottom: 12px;
-  }
-
-  p {
-    font-size: 16px;
-    margin-bottom: 12px;
-    line-height: 1.6;
-  }
 }
