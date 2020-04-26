@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Меню с каталогом продукции
   const $productsMenu = document.querySelector('.products-menu');
   const $productsMenuTrigger = document.querySelector('.js-products-trigger');
-  $productsMenuTrigger.addEventListener('click', clickProductsTrigger);
-
+  $productsMenuTrigger.addEventListener('click', toggleProductsMenu);
   window.addEventListener('click', (e) => {
     if ($productsMenu.classList.contains('products-menu_visible') && !e.target.closest('.products-menu') && !e.target.closest('.js-products-trigger')) {
-      $productsMenu.classList.remove('products-menu_visible');
-      $productsMenuTrigger.classList.remove('main-menu__item_active');
+      toggleProductsMenu();
     }
   })
+
+
+  $('.product-card__title-select').on('change', setProductValues);
 });
 
 var slider = tns({
@@ -32,7 +34,7 @@ $(".main-slider").on("mouseenter", function () {
   slider.play()
 });
 
-function clickProductsTrigger() {
+function toggleProductsMenu() {
   const $productsMenu = document.querySelector('.products-menu');
   const $productsMenuTrigger = document.querySelector('.js-products-trigger');
   $productsMenu.classList.toggle('products-menu_visible');
