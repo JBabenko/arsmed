@@ -1,10 +1,17 @@
-$(document).ready(function () {
-  var t = document.querySelector(".products-menu").getBoundingClientRect().top;
-  $(".products-menu-sub").css("top", t)
+document.addEventListener('DOMContentLoaded', () => {
+  const $productsMenu = document.querySelector('.products-menu');
+  const $productsMenuTrigger = document.querySelector('.js-products-trigger');
+  $productsMenuTrigger.addEventListener('click', clickProductsTrigger);
 
-  $('.product-card__title-select').on('change', setProductValues);
+  window.addEventListener('click', (e) => {
+    if ($productsMenu.classList.contains('products-menu_visible') && !e.target.closest('.products-menu') && !e.target.closest('.js-products-trigger')) {
+      $productsMenu.classList.remove('products-menu_visible');
+      $productsMenuTrigger.classList.remove('main-menu__item_active');
+    }
+  })
 });
-var t = tns({
+
+var slider = tns({
   container: ".main-slider__list",
   items: 1,
   speed: 500,
@@ -20,10 +27,17 @@ var t = tns({
   mouseDrag: !0
 });
 $(".main-slider").on("mouseenter", function () {
-  t.pause()
+  slider.pause()
 }), $(".main-slider").on("mouseleave", function () {
-  t.play()
+  slider.play()
 });
+
+function clickProductsTrigger() {
+  const $productsMenu = document.querySelector('.products-menu');
+  const $productsMenuTrigger = document.querySelector('.js-products-trigger');
+  $productsMenu.classList.toggle('products-menu_visible');
+  $productsMenuTrigger.classList.toggle('main-menu__item_active');
+};
 
 function setProductValues(e) {
   const target = $(e.target);
