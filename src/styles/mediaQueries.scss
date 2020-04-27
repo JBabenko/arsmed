@@ -1,0 +1,63 @@
+@media screen and (max-width: 1023px) {
+  .main {
+    padding-left: 96px;
+    transition: padding 0.3s;
+  }
+  .header {
+    top: 0;
+    left: -224px;
+    transition: left 0.3s;
+
+    &_expanded {
+      left: 0;
+
+      & .header__logo-img {
+        width: 60%;
+        top: 24px;
+        right: 108px;
+      }
+
+      & .main-menu__item-text {
+        margin-left: 0;
+      }
+    }
+
+    &__inner {
+      padding: 12px;
+    }
+
+    &__expand {
+      display: flex;
+    }
+
+    &__logo {
+      margin-bottom: 0;
+
+      &-link {
+        justify-content: flex-end;
+      }
+      &-img {
+        position: absolute;
+        top: 84px;
+        right: 12px;
+        width: 72px;
+        transition: 0.3s;
+      }
+    }
+  }
+
+  .main-menu {
+    margin-top: 108px;
+
+    &__item {
+      &-text {
+        margin-left: -48px;
+        transition: margin 0.2s;
+      }
+
+      &-icon {
+        display: flex;
+      }
+    }
+  }
+}

@@ -1,8 +1,11 @@
 .header {
   flex-shrink: 0;
-  width: 320px;
+  width: $header-width-big;
   @include border(right);
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
 
   &__main {
     position: relative;
@@ -18,6 +21,19 @@
     flex-direction: column;
     padding: 24px 36px;
     height: 100vh;
+    width: $header-width-big;
+  }
+
+  &__expand {
+    display: none;
+    justify-content: flex-end;
+    padding-right: 6px;
+
+    & .ham {
+      &:hover .line {
+        stroke: $text;
+      }
+    }
   }
 
   &__logo {
@@ -50,6 +66,9 @@
   &__item {
     position: relative;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     &:before {
       content: '';
@@ -81,12 +100,20 @@
       color: $brand;
     }
 
+    &:hover .main-menu__item-icon {
+      color: $brand;
+    }
+
     &:hover:before {
       left: -42px;
     }
 
     &_active {
       & .main-menu__item-text {
+        color: $brand;
+      }
+
+      & .main-menu__item-icon {
         color: $brand;
       }
 
@@ -100,6 +127,14 @@
       padding: 12px 0;
       font-size: 17px;
       text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    &-icon {
+      display: none;
+      align-items: center;
+      font-size: 20px;
+      padding: 0 27px;
       transition: color 0.3s;
     }
   }
@@ -117,7 +152,7 @@
   transition: left 0.2s;
 
   &_visible {
-    left: 320px;
+    left: $header-width-big;
 
     & + .header__main {
       box-shadow: 1px 0 8px 1px $dull;
@@ -157,7 +192,7 @@
     transition: opacity 0.3s, transform 0.3s;
     // min-height: 360px;
     width: max-content;
-    max-width: calc(100vw - 640px);
+    max-width: calc(100vw - ($header-width-big * 2));
     padding: 36px;
     background: $background-main;
     @include border(bottom);

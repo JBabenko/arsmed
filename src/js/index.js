@@ -3,12 +3,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const $productsMenu = document.querySelector('.products-menu');
   const $productsMenuTrigger = document.querySelector('.js-products-trigger');
   $productsMenuTrigger.addEventListener('click', toggleProductsMenu);
+
+  const $header = document.querySelector('.header');
+  const $expandMenuBtn = document.querySelector('.js-ham-btn');
+  $expandMenuBtn.addEventListener('click', () => {
+    $header.classList.toggle('header_expanded');
+  });
+
   window.addEventListener('click', (e) => {
     if ($productsMenu.classList.contains('products-menu_visible') && !e.target.closest('.products-menu') && !e.target.closest('.js-products-trigger')) {
       toggleProductsMenu();
     }
-  })
 
+    if ($header.classList.contains('header_expanded') && !e.target.closest('.header') && !e.target.closest('.js-ham-btn')) {
+      $header.classList.toggle('header_expanded');
+      $expandMenuBtn.classList.toggle('active');
+    }
+  })
 
   $('.product-card__title-select').on('change', setProductValues);
 });

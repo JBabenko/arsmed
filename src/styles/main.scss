@@ -1,4 +1,4 @@
-@import './colors';
+@import './vars';
 @import './mixins';
 @import './reset';
 @import './fonts';
@@ -10,6 +10,9 @@
 @import './components/products';
 @import './components/news';
 
+@import './svg';
+@import './mediaQueries';
+
 .body {
   font-family: NotoSans;
   color: $text;
@@ -17,6 +20,7 @@
 }
 
 .general-container {
+  position: relative;
   height: fit-content;
   background: $background-main;
   display: flex;
@@ -30,6 +34,7 @@
 .main {
   flex-grow: 1;
   background: $background-secondary;
+  padding-left: 320px;
 }
 
 .section-title {
