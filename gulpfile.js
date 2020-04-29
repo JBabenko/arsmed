@@ -14,6 +14,7 @@ const smartgrid = require('smart-grid');
 
 const jsFiles = [
     'src/js/index.js',
+    'src/js/script-m.js',
 ];
 
 function html() {

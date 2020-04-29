@@ -1,13 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Меню с каталогом продукции
   const $productsMenu = document.querySelector('.products-menu');
+  if (window.innerWidth < 1024) {
+    $productsMenu.classList.add('products-menu_m');
+  }
   const $productsMenuTrigger = document.querySelector('.js-products-trigger');
   $productsMenuTrigger.addEventListener('click', toggleProductsMenu);
 
   const $header = document.querySelector('.header');
   const $expandMenuBtn = document.querySelector('.js-ham-btn');
+  const $closeCatalogBtn = document.querySelector('.products-menu__close-btn');
   $expandMenuBtn.addEventListener('click', () => {
     $header.classList.toggle('header_expanded');
+  });
+  $closeCatalogBtn.addEventListener('click', () => {
+    toggleProductsMenu();
   });
 
   window.addEventListener('click', (e) => {
@@ -22,6 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   $('.product-card__title-select').on('change', setProductValues);
+
+  $( window ).resize(function() {
+    const windowWidth = window.innerWidth;
+    if (windowWidth < 1024) {
+      $productsMenu.classList.add('products-menu_m');
+    } else {
+      $productsMenu.classList.remove('products-menu_m');
+    }
+  });
 });
 
 var slider = tns({
@@ -46,10 +62,17 @@ $(".main-slider").on("mouseenter", function () {
 });
 
 function toggleProductsMenu() {
+  const $header = document.querySelector('.header');
   const $productsMenu = document.querySelector('.products-menu');
   const $productsMenuTrigger = document.querySelector('.js-products-trigger');
+  const $expandMenuBtn = document.querySelector('.js-ham-btn');
+
   $productsMenu.classList.toggle('products-menu_visible');
   $productsMenuTrigger.classList.toggle('main-menu__item_active');
+  if (!$header.classList.contains('header_expanded')) {
+    $expandMenuBtn.classList.toggle('active');
+  }
+  $header.classList.add('header_expanded');
 };
 
 function setProductValues(e) {

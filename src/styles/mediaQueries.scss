@@ -7,6 +7,7 @@
     top: 0;
     left: -224px;
     transition: left 0.3s;
+    overflow: hidden;
 
     &_expanded {
       left: 0;
@@ -57,6 +58,35 @@
 
       &-icon {
         display: flex;
+      }
+    }
+  }
+
+  .products-menu {
+    left: 320px;
+    z-index: 11;
+
+    &_visible {
+      left: 0;
+    }
+
+    &__title {
+      display: block;
+    }
+
+    &__close-btn {
+      display: block;
+    }
+
+    &-sub {
+      &__item {
+        &-text {
+          display: none;
+
+          &_not-link {
+            display: block;
+          }
+        }
       }
     }
   }
