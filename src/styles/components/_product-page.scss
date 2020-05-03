@@ -1,0 +1,139 @@
+.product-page {
+  // padding: 48px 0;
+  display: flex;
+
+  &__info {
+    width: 40%;
+  }
+
+  &__picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    @include border(left);
+    @include border(bottom);
+    @include border(right);
+    border-radius: 0 0 3px 3px;
+    background: $background-main;
+    height: 400px;
+  }
+
+  &__img {
+    max-width: 100%;
+  }
+
+  &__params {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+
+    &-input {
+      display: none;
+
+      &:checked + .product-page__options-label {
+        color: $brand;
+
+        &:before {
+          background-color: $brand-light;
+        }
+
+        &:after {
+          display: block;
+          top: 5px;
+          left: 5px;
+        }
+      }
+    }
+
+    &-label {
+      position: relative;
+      margin-bottom: 12px;
+      padding-left: 36px;
+      font-size: 18px;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        background: $dull;
+        border-radius: 24px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: none;
+        left: 0;
+        top: 0;
+        width: 14px;
+        height: 14px;
+        background: $background-main;
+        border-radius: 14px;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__price {
+    &-text {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      line-height: 24px;
+      margin: 3px 0;
+
+      &_secondary {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__currency-icon {
+    font-size: 20px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    margin-right: 6px;
+
+    &_primary {
+      font-size: 24px;
+    }
+  }
+
+  &__qty {
+    display: flex;
+
+    &-input {
+      @include border();
+      border-radius: 3px;
+      width: 60px;
+      height: 36px;
+      padding: 12px;
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+
+  &__cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

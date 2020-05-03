@@ -6,9 +6,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('../fonts/icomoon.ttf?at72ea') format('truetype'),
-    url('../fonts/icomoon.woff?at72ea') format('woff'),
-    url('../fonts/icomoon.svg?at72ea#icomoon') format('svg');
+    url('../fonts/icomoon.ttf?ia3cl6') format('truetype'),
+    url('../fonts/icomoon.woff?ia3cl6') format('woff'),
+    url('../fonts/icomoon.svg?ia3cl6#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -62,8 +62,14 @@
 .icon-grid:before {
   content: "\e90b";
 }
+.icon-minus:before {
+  content: "\e910";
+}
 .icon-phone:before {
   content: "\e90c";
+}
+.icon-plus:before {
+  content: "\e911";
 }
 .icon-cart:before {
   content: "\e905";

@@ -29,15 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   $('.product-card__title-select').on('change', setProductValues);
-
-  $( window ).resize(function() {
-    const windowWidth = window.innerWidth;
-    if (windowWidth < 1024) {
-      $productsMenu.classList.add('products-menu_m');
-    } else {
-      $productsMenu.classList.remove('products-menu_m');
-    }
-  });
 });
 
 var slider = tns({

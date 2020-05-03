@@ -10,6 +10,8 @@
 @import './components/products';
 @import './components/news';
 
+@import './components/product-page';
+
 @import './svg';
 @import './mediaQueries';
 
@@ -35,6 +37,7 @@
   flex-grow: 1;
   background: $background-secondary;
   padding-left: 320px;
+  min-height: 100vh;
 }
 
 .section-title {

@@ -18,7 +18,7 @@ const jsFiles = [
 ];
 
 function html() {
-    return gulp.src('src/index.html')
+    return gulp.src(['src/index.html', 'src/product-page.html'])
                 .pipe(rigger())
                 .pipe(gulp.dest('build'))
                 .pipe(browserSync.stream());

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Document</title>
+</head>
+<body class="body">
+  <div class="general-container">
+    //= template/header.html
+    <main class="main">
+      <div class="content-container">
+        <div class="product-page">
+          <div class="product-page__info">
+            <div class="product-page__picture">
+              <img src="./images/bio-oss_0.5S.jpeg" alt="" class="product-page__img">
+            </div>
+            <div class="product-page__params">
+              <div class="product-page__options">
+                <input type="radio" id="1" name="product-option" checked class="product-page__options-input"></input>
+                <label for="1" class="product-page__options-label">0.5 S</label>
+                <input type="radio" id="2" name="product-option" class="product-page__options-input"></input>
+                <label for="2" class="product-page__options-label">0.5 L</label>
+                <input type="radio" id="3" name="product-option" class="product-page__options-input"></input>
+                <label for="3" class="product-page__options-label">1.0 S</label>
+                <input type="radio" id="4" name="product-option" class="product-page__options-input"></input>
+                <label for="4" class="product-page__options-label">20x20x(0.6)мм STD</label>
+                <input type="radio" id="5" name="product-option" class="product-page__options-input"></input>
+                <label for="5" class="product-page__options-label">30x30x(0.6)мм STD</label>
+                <input type="radio" id="6" name="product-option" class="product-page__options-input"></input>
+                <label for="6" class="product-page__options-label">40x40x(0.4)мм FINE</label>
+              </div>
+              <div class="product-page__actions">
+                <div class="product-page__price">
+                  <div class="product-page__price-text product-page__price-text_primary">
+                    <div class="product-card__currency-icon product-card__currency-icon_primary icon-rub"></div>
+                    6034
+                  </div>
+                  <div class="product-page__price-text product-page__price-text_secondary">
+                    <div class="product-card__currency-icon icon-chf"></div>
+                    123.45
+                  </div>
+                </div>
+                <div class="product-page__cart">
+                  <div class="product-page__qty">
+                    <div class="product-page__qty-btn product-page__qty-btn_plus">
+                      <div class="icon-plus product-page__qty-icon js-product-plus"></div>
+                    </div>
+                    <input type="number" class="product-page__qty-input">
+                    <div class="product-page__qty-btn product-page__qty-btn_minus">
+                      <div class="icon-minus product-page__qty-icon js-product-minus"></div>
+                    </div>
+                  </div>
+                  <button class="product-page__add-btn">Купить <span class="icon-cart"></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-page__content">
+            asd
+          </div>
+        </div>
+        
+      </div>
+    </main>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
