@@ -13,7 +13,9 @@ const browserSync = require('browser-sync').create();
 const smartgrid = require('smart-grid');
 
 const jsFiles = [
-    'src/js/index.js',
+    'src/js/script.js',
+    'src/js/slider.js',
+    'src/js/cart.js',
     'src/js/script-m.js',
 ];
 
@@ -62,7 +64,7 @@ function editorStyles() {
 
 function script() {
     return gulp.src(jsFiles)
-                .pipe(concat('script.js'))
+                // .pipe(concat('script.js'))
                 .pipe(babel({
                     presets: ['@babel/env']
                 }))

@@ -11,54 +11,105 @@
     //= template/header.html
     <main class="main">
       <div class="content-container">
-        <div class="product-page">
-          <div class="product-page__info">
+        <div class="product-page" data-id="100">
+          <section class="product-page__info">
+            <header class="product-page__header">
+              <h1 class="product-page__header-title">Bio-Oss Spongiosa</h1>
+              <p class="product-page__header-desc">Натуральные гранулы с коллагеном</p>
+            </header>
             <div class="product-page__picture">
               <img src="./images/bio-oss_0.5S.jpeg" alt="" class="product-page__img">
             </div>
             <div class="product-page__params">
               <div class="product-page__options">
-                <input type="radio" id="1" name="product-option" checked class="product-page__options-input"></input>
+                <input type="radio" id="1" name="product-option" checked class="product-page__options-input js-product-option" data-price-secondary="103.69" data-image="./images/bio-oss_0.5S.jpeg" data-price-primary="8012"></input>
                 <label for="1" class="product-page__options-label">0.5 S</label>
-                <input type="radio" id="2" name="product-option" class="product-page__options-input"></input>
+                <input type="radio" id="2" name="product-option" class="product-page__options-input js-product-option" data-price-secondary="103.69" data-image="./images/bio-oss_0.5L.jpeg" data-price-primary="8012"></input>
                 <label for="2" class="product-page__options-label">0.5 L</label>
-                <input type="radio" id="3" name="product-option" class="product-page__options-input"></input>
+                <input type="radio" id="3" name="product-option" class="product-page__options-input js-product-option" data-price-secondary="194.86" data-image="./images/bio-oss_1S.jpg" data-price-primary="15056"></input>
                 <label for="3" class="product-page__options-label">1.0 S</label>
-                <input type="radio" id="4" name="product-option" class="product-page__options-input"></input>
+                <input type="radio" id="4" name="product-option" class="product-page__options-input js-product-option"></input>
                 <label for="4" class="product-page__options-label">20x20x(0.6)мм STD</label>
-                <input type="radio" id="5" name="product-option" class="product-page__options-input"></input>
-                <label for="5" class="product-page__options-label">30x30x(0.6)мм STD</label>
-                <input type="radio" id="6" name="product-option" class="product-page__options-input"></input>
+                <input type="radio" id="5" name="product-option" class="product-page__options-input js-product-option"></input>
+                <label for="5" class="product-page__options-label">30x30x(0.6)мм STD 30x30x(0.6)мм STD</label>
+                <input type="radio" id="6" name="product-option" class="product-page__options-input js-product-option"></input>
                 <label for="6" class="product-page__options-label">40x40x(0.4)мм FINE</label>
               </div>
               <div class="product-page__actions">
                 <div class="product-page__price">
                   <div class="product-page__price-text product-page__price-text_primary">
-                    <div class="product-card__currency-icon product-card__currency-icon_primary icon-rub"></div>
-                    6034
+                    <div class="product-page__currency-icon product-page__currency-icon_primary icon-rub"></div>
+                    <span class="js-price-primary">6034</span>
                   </div>
                   <div class="product-page__price-text product-page__price-text_secondary">
-                    <div class="product-card__currency-icon icon-chf"></div>
-                    123.45
+                    <div class="product-page__currency-icon icon-chf"></div>
+                    <span class="js-price-secondary">123.45</span>
                   </div>
                 </div>
                 <div class="product-page__cart">
                   <div class="product-page__qty">
-                    <div class="product-page__qty-btn product-page__qty-btn_plus">
-                      <div class="icon-plus product-page__qty-icon js-product-plus"></div>
+                    <div class="product-page__qty-btn product-page__qty-btn_minus js-product-qty-btn" data-action="-1">
+                      <div class="icon-minus product-page__qty-icon"></div>
                     </div>
-                    <input type="number" class="product-page__qty-input">
-                    <div class="product-page__qty-btn product-page__qty-btn_minus">
-                      <div class="icon-minus product-page__qty-icon js-product-minus"></div>
+                    <input type="number" value="1" class="product-page__qty-input js-product-qty-input">
+                    <div class="product-page__qty-btn product-page__qty-btn_plus js-product-qty-btn" data-action="1">
+                      <div class="icon-plus product-page__qty-icon"></div>
                     </div>
                   </div>
-                  <button class="product-page__add-btn">Купить <span class="icon-cart"></span></button>
+                  <button class="product-page__add-btn js-add-to-cart" data-id="100">
+                    <div class="product-page__add-count js-product-cart-count"></div>
+                    <span class="icon-cart"></span>
+                    Добавить
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
+          </section>
           <div class="product-page__content">
-            asd
+            <div class="product-page__tabs">
+              <input type="radio" id="11" name="text-block-tabs" checked class="text-block__tabs-input js-tabs"></input>
+              <label for="11" class="text-block__tabs-label">Характеристики</label>
+              <input type="radio" id="12" name="text-block-tabs" class="text-block__tabs-input js-tabs"></input>
+              <label for="12" class="text-block__tabs-label">Видео</label>
+              <input type="radio" id="13" name="text-block-tabs" class="text-block__tabs-input js-tabs"></input>
+              <label for="13" class="text-block__tabs-label">Каталоги</label>
+            </div>
+            <div class="text-block product-page__tabs-content js-tabs-content" data-id="11">
+              <h2>Преимущества</h2>
+              <ul>
+                <li>стабилизация кровяного сгустка</li>
+                <li>материала обладает высокими гидрофильными свойствами. Обеспечен особой системой макро и микро пор, за счет которых происходит быстрое и равномерное пропитывание гранул кровью.</li>
+                <li>Остеокондуктивные свойства Geistlich Bio-Oss® обеспечивают надежную и предсказуемую костную регенерацию, гранулы био-ос интегрируются в новую образовавшуюся жизнеспособную кость и становятся ее каркасом</li>
+                <li>Низкая скорость резорбции гранул Geistlich Bio-Oss® способствует сохранению объема аугментата.в течение достаточно долгосрочного периода.</li>
+                <li>достигается хороший эстетический результат мягких тканей за счет образования долгосрочной основы твердой ткани</li>
+                <li>Geistlich Bio-Oss® биофункциональный материал, и поэтому показания к его применению имеют очень широкий круг и используется в различных клинических ситуациях</li>
+                <li>Достижение успешных клинических результатов. Используется как самостоятельно, так и при смешивании с аутологичной костью</li>
+                <li>Geistlich Bio-Oss® на рынке более 25 лет, результаты его успешного применения размещены более чем в 900 научных публикациях</li>
+              </ul>
+              <h2>Показания</h2>
+              <p>Компания Geitlich постоянно совершенствуются, развиваются, в сотрудничестве с ведущими хирургами разрабатывают новые методики лечения и увеличивают круг применения своей продукции в различных клинических ситуациях.</p>
+              <p>Гранулы гайстлих биос широко используются в хирургической стоматологии, пародонтологии, имплантологии и челюстно-лицевой хирургии:</p>
+              <h2>Преимущества</h2>
+              <ul>
+                <li>стабилизация кровяного сгустка</li>
+                <li>материала обладает высокими гидрофильными свойствами. Обеспечен особой системой макро и микро пор, за счет которых происходит быстрое и равномерное пропитывание гранул кровью.</li>
+                <li>Остеокондуктивные свойства Geistlich Bio-Oss® обеспечивают надежную и предсказуемую костную регенерацию, гранулы био-ос интегрируются в новую образовавшуюся жизнеспособную кость и становятся ее каркасом</li>
+                <li>Низкая скорость резорбции гранул Geistlich Bio-Oss® способствует сохранению объема аугментата.в течение достаточно долгосрочного периода.</li>
+                <li>достигается хороший эстетический результат мягких тканей за счет образования долгосрочной основы твердой ткани</li>
+                <li>Geistlich Bio-Oss® биофункциональный материал, и поэтому показания к его применению имеют очень широкий круг и используется в различных клинических ситуациях</li>
+                <li>Достижение успешных клинических результатов. Используется как самостоятельно, так и при смешивании с аутологичной костью</li>
+                <li>Geistlich Bio-Oss® на рынке более 25 лет, результаты его успешного применения размещены более чем в 900 научных публикациях</li>
+              </ul>
+              <h2>Показания</h2>
+              <p>Компания Geitlich постоянно совершенствуются, развиваются, в сотрудничестве с ведущими хирургами разрабатывают новые методики лечения и увеличивают круг применения своей продукции в различных клинических ситуациях.</p>
+              <p>Гранулы гайстлих биос широко используются в хирургической стоматологии, пародонтологии, имплантологии и челюстно-лицевой хирургии:</p>
+            </div>
+            <div class="text-block product-page__tabs-content js-tabs-content" data-id="12">
+              12
+            </div>
+            <div class="text-block product-page__tabs-content js-tabs-content" data-id="13">
+              13
+            </div>
           </div>
         </div>
         

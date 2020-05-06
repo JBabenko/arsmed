@@ -30,3 +30,13 @@
     }
   }
 }
+
+@mixin button-hover() {
+  background-color: $brand;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $brand-hover;
+  }
+}
