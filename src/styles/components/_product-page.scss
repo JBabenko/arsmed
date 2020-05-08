@@ -1,45 +1,48 @@
 .product-page {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  padding: 24px 0;
 
   &__info {
     display: flex;
     flex-direction: column;
-    width: 40%;
-    max-width: 600px;
-    flex-shrink: 0;
-    @include border(left);
-    @include border(bottom);
-    @include border(right);
+    width: fit-content;
+    @include border();
     background: $background-main;
-    border-radius: 0 0 3px 3px;
-    padding: 24px 36px;
-    margin: 0 48px 48px 0;
+    border-radius: 6px;
+    padding: 24px 36px 36px;
   }
 
   &__header {
     &-title {
-      font-size: 34px;
+      font-size: 2.125rem;
       margin-bottom: 0;
     }
 
     &-desc {
-      font-size: 20px;
+      font-size: 1.25rem;
       margin-bottom: 0;
       color: $text-light;
     }
   }
 
+  &__main {
+    display: flex;
+  }
+
   &__picture {
     display: flex;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
-    padding: 24px 0;
-    height: 400px;
+    padding: 24px 24px 0 0;
+    width: 396px;
+    height: 348px;
   }
 
   &__img {
     max-width: 100%;
+    max-height: 100%;
   }
 
   &__params {
@@ -73,7 +76,7 @@
       position: relative;
       margin-bottom: 12px;
       padding-left: 36px;
-      font-size: 18px;
+      font-size: 1.125rem;
       cursor: pointer;
 
       &:last-child {
@@ -111,35 +114,35 @@
   &__actions {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    padding: 24px 0 0 48px;
   }
 
   &__price {
-    margin-bottom: 24px;
+    margin-bottom: 48px;
   
     &-text {
       display: flex;
       align-items: center;
-      font-size: 29px;
+      font-size: 2.0625rem;
       line-height: 24px;
       margin: 6px 0;
 
       &_secondary {
-        font-size: 18px;
+        font-size: 1.125rem;
       }
     }
   }
 
   &__currency-icon {
-    font-size: 24px;
-    width: 24px;
+    font-size: 1.5rem;
+    width: 36px;
     display: flex;
     justify-content: center;
     margin-right: 12px;
 
     &_primary {
-      font-size: 34px;
+      font-size: 2.375rem;
     }
   }
 
@@ -154,13 +157,13 @@
       width: 60px;
       height: 36px;
       padding: 12px;
-      font-size: 20px;
+      font-size: 1.25rem;
       text-align: center;
     }
 
     &-btn {
       padding: 6px;
-      font-size: 20px;
+      font-size: 1.25rem;
       cursor: pointer;
       transition: 0.2s;
 
@@ -180,7 +183,7 @@
     position: relative;
     height: 48px;
     width: 144px;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: $background-main;
     border-radius: 3px;
     @include button-hover();
@@ -206,33 +209,55 @@
   }
 
   &__tabs {
+    position: relative;
     display: flex;
-    margin-bottom: 24px;
+    flex-wrap: wrap;
+    margin: 48px 0 24px;
+    @include border(bottom);
 
     &-input {
       display: none;
 
-      &:checked + .text-block__tabs-label {
-        transform: translateY(0);
-        background-color: $brand;
-        color: $background-main;
+      &:checked + .product-page__tabs-label {
+        color: $brand;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 4px;
+          left: 0;
+          bottom: 0;
+          background: $brand;
+          opacity: 1;
+        }
       }
     }
 
     &-label {
-      @include border(left, 1px, $brand);
-      @include border(right, 1px, $brand);
-      @include border(bottom, 1px, $brand);
-      padding: 15px 24px 12px;
-      font-size: 17px;
-      border-radius: 0 0 3px 3px;
-      margin-right: 6px;
-      transform: translateY(-3px);
+      position: relative;
+      padding: 12px 24px;
+      font-size: 1.25rem;
+      margin-right: 12px;
       cursor: pointer;
-      transition: transform 0.2s;
 
-      &:hover {
-        transform: translateY(0);
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        left: 0;
+        bottom: 0;
+        background: $brand-light;
+        border-radius: 2px;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+
+      &:hover:before {
+        opacity: 1;
       }
     }
 

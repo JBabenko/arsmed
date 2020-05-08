@@ -1,17 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Меню с каталогом продукции
   const $productsMenu = document.querySelector('.products-menu');
-  if (window.innerWidth < 1024) {
-    $productsMenu.classList.add('products-menu_m');
-  }
+
   const $productsMenuTrigger = document.querySelector('.js-products-trigger');
   $productsMenuTrigger.addEventListener('click', toggleProductsMenu);
 
   const $header = document.querySelector('.header');
-  const $expandMenuBtn = document.querySelector('.js-ham-btn');
+  const $expandMenuBtn = $('.js-ham-btn');
+  const $closeMenuBtn = document.querySelector('.js-close-menu');
   const $closeCatalogBtn = document.querySelector('.products-menu__close-btn');
-  $expandMenuBtn.addEventListener('click', () => {
+  $expandMenuBtn.click(function() {
     $header.classList.toggle('header_expanded');
+  });
+  $closeMenuBtn.addEventListener('click', () => {
+    $header.classList.toggle('header_expanded');
+    $expandMenuBtn.toggleClass('active');
   });
   $closeCatalogBtn.addEventListener('click', () => {
     toggleProductsMenu();
@@ -24,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if ($header.classList.contains('header_expanded') && !e.target.closest('.header') && !e.target.closest('.js-ham-btn')) {
       $header.classList.toggle('header_expanded');
-      $expandMenuBtn.classList.toggle('active');
+      $expandMenuBtn.toggleClass('active');
     }
   })
 
@@ -35,27 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Табы на странице товара
   showActiveTabContent();
   $('.js-tabs').on('change', showActiveTabContent);
-
-  // Изменение количества товара для добавления в корзину
-  $('.js-product-qty-btn').click(changeProductQty);
-  $('.js-product-qty-input').on('keyup', productQtyWatcher);
-
-  // Добавление товара в корзину
-  $('.js-add-to-cart').click(addProductToCart);
-  const itemInCart = getItemInCart($('.product-page__options-input').filter(':checked').attr('id'));
-  setProductAddedQty(itemInCart && itemInCart.qty);
 });
 
 function toggleProductsMenu() {
   const $header = document.querySelector('.header');
   const $productsMenu = document.querySelector('.products-menu');
   const $productsMenuTrigger = document.querySelector('.js-products-trigger');
-  const $expandMenuBtn = document.querySelector('.js-ham-btn');
+  const $expandMenuBtn = $('.js-ham-btn');
 
   $productsMenu.classList.toggle('products-menu_visible');
   $productsMenuTrigger.classList.toggle('main-menu__item_active');
   if (!$header.classList.contains('header_expanded')) {
-    $expandMenuBtn.classList.toggle('active');
+    $expandMenuBtn.toggleClass('active');
   }
   $header.classList.add('header_expanded');
 };
@@ -88,48 +82,6 @@ function showActiveTabContent() {
 
   $('.js-tabs-content').removeClass('product-page__tabs-content_active');
   checkedContent.addClass('product-page__tabs-content_active');
-};
-
-function changeProductQty() {
-  const action = +$(this).data('action');
-  const input = $('.js-product-qty-input');
-  const value = +input.val();
-
-  input.val(value + action);
-
-  if (+input.val() < 1) {
-    input.val(1);
-  }
-};
-
-function productQtyWatcher(e) {
-  e.target.value = e.target.value.replace(/\D/gi, '').replace(/^0+/, '');
-  if (!e.target.value) {
-    e.target.value = 1;
-  }
-};
-
-function addProductToCart() {
-  const id = $(this).data('id');
-  const optionId = $(this).closest('.product-page__params')
-                          .find('.js-product-option:checked')
-                          .attr('id');
-  const qty = +$('.js-product-qty-input').val() || 1;
-
-  const cart = JSON.parse(localStorage.getItem('itemsInCart')) || [];
-  const itemInCart = cart.find(item => item.optionId === optionId);
-  let newQty;
-
-  if (itemInCart) {
-    itemInCart.qty += qty;
-    newQty = itemInCart.qty;
-  } else {
-    cart.push({ id, qty, optionId });
-    newQty = qty;
-  }
-
-  localStorage.setItem('itemsInCart', JSON.stringify(cart));
-  setProductAddedQty(newQty);
 };
 
 function getItemInCart(id) {

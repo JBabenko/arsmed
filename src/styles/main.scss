@@ -16,8 +16,12 @@
 @import './svg';
 @import './mediaQueries';
 
+html {
+  font-size: 16px;
+}
+
 .body {
-  font-family: NotoSans;
+  font-family: OpenSans;
   color: $text;
   font-size: 14px;
 }
@@ -39,6 +43,7 @@
   background: $background-secondary;
   padding-left: 320px;
   min-height: 100vh;
+  max-width: 100%;
 }
 
 .section-title {

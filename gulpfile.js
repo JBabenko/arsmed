@@ -68,9 +68,9 @@ function script() {
                 .pipe(babel({
                     presets: ['@babel/env']
                 }))
-                .pipe(uglify({
-                    toplevel: true
-                }))
+                // .pipe(uglify({
+                //     toplevel: true
+                // }))
                 .pipe(gulp.dest('build/js'))
                 .pipe(browserSync.stream());
 }
@@ -82,7 +82,7 @@ function images() {
 }
 
 function fonts() {
-    return gulp.src('src/fonts/*')
+    return gulp.src('src/fonts/**/*')
                 .pipe(gulp.dest('build/fonts'));
 }
 

@@ -36,6 +36,16 @@
     }
   }
 
+  &__close {
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 26px;
+    cursor: pointer;
+    transition: color .2s;
+  }
+
   &__logo {
     margin-bottom: 36px;
 
@@ -342,6 +352,7 @@
       padding: 12px;
       @include border(left, 1px, $brand);
       width: 100%;
+      min-width: 100%;
       margin: 12px 0 12px;
 
       &__item {
@@ -414,4 +425,8 @@
     font-size: 24px;
     transition: color 0.2s;
   }
+}
+
+.header-m {
+  display: none;
 }
