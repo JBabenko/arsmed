@@ -141,6 +141,41 @@
 
   .content-container {
     padding: 0;
+
+    &_padding {
+      padding: 0 24px;
+    }
+  }
+
+  .news-block {
+    &__item {
+      padding: 0 0 24px;
+    }
+
+    &__show-all-link {
+      padding: 0;
+    }
+  }
+
+  .news-item {
+    position: relative;
+
+    &__content {
+      margin: 0;
+    }
+
+    &__picture {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 84px;
+    }
+
+    &__title {
+      margin: 0;
+      height: 96px;
+      padding-left: 96px;
+    }
   }
 
   .product-page {
@@ -243,6 +278,7 @@
     height: 48px;
     z-index: 1;
     @include border(bottom);
+    overflow: hidden;
 
     &__item {
       width: 33.33%;

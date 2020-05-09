@@ -149,7 +149,23 @@
     }
   }
 
-  
+  &__cart-count {
+    position: absolute;
+    top: 0;
+    right: -6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+
+    &.hidden {
+      display: none;
+    }
+
+    &-text {
+      color: $brand;
+    }
+  }
 }
 
 .products-menu {

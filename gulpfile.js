@@ -15,7 +15,8 @@ const smartgrid = require('smart-grid');
 const jsFiles = [
     'src/js/script.js',
     'src/js/slider.js',
-    'src/js/cart.js',
+    'src/js/select.js',
+    'src/js/product.js',
     'src/js/script-m.js',
 ];
 

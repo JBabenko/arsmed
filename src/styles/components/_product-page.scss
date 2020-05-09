@@ -203,7 +203,7 @@
     color: $brand;
     background: $background-main;
 
-    &_visible {
+    &.visible {
       display: flex;
     }
   }

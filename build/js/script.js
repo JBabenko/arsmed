@@ -28,10 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
       $header.classList.toggle('header_expanded');
       $expandMenuBtn.toggleClass('active');
     }
-  });
-  $('.product-card__title-select').on('change', setProductCardValues);
-  setProductPageValues();
-  $('.product-page__options-input').on('change', setProductPageValues); // Табы на странице товара
+  }); // Табы на странице товара
 
   showActiveTabContent();
   $('.js-tabs').on('change', showActiveTabContent);
@@ -50,30 +47,6 @@ function toggleProductsMenu() {
   }
 
   $header.classList.add('header_expanded');
-}
-
-;
-
-function setProductCardValues(e) {
-  var target = $(e.target);
-  var option = $(this).find("[value=\"".concat(e.target.value, "\"]"));
-  var img = target.parents('.product-card').find('.product-card__img');
-  var pricePrimary = target.parents('.product-card').find('.product-card__price-primary');
-  var priceSecondary = target.parents('.product-card').find('.product-card__price-secondary');
-  img.attr('src', option.data('image'));
-  pricePrimary.text(option.data('price-rub'));
-  priceSecondary.text(e.target.value);
-}
-
-;
-
-function setProductPageValues() {
-  var target = $('.product-page__options-input').filter(':checked');
-  $('.js-price-primary').text(target.data('price-primary'));
-  $('.js-price-secondary').text(target.data('price-secondary'));
-  $('.product-page__img').attr('src', target.data('image'));
-  var itemInCart = getItemInCart(target.attr('id'));
-  setProductAddedQty(itemInCart && itemInCart.qty);
 }
 
 ;
@@ -98,14 +71,16 @@ function getItemInCart(id) {
 
 ;
 
-function setProductAddedQty(qty) {
+function setProductAddedQty($this, qty) {
+  var $cartCount = $this.find('.js-product-cart-count');
+
   if (qty) {
-    $('.js-product-cart-count').addClass('product-page__add-count_visible');
+    $cartCount.addClass('visible');
   } else {
-    $('.js-product-cart-count').removeClass('product-page__add-count_visible');
+    $cartCount.removeClass('visible');
   }
 
-  $('.js-product-cart-count').text(qty || '');
+  $cartCount.text(qty || '');
 }
 
 ;

@@ -22,6 +22,7 @@
   max-width: 288px;
   margin-bottom: 48px;
   padding: 24px 24px 12px 24px;
+  background-color: $background-main;
 
   &__picture {
     height: 180px;
@@ -51,16 +52,10 @@
         color: $brand;
       }
     }
+  }
 
-    &-select {
-      outline: none;
-      border: none;
-      @include border(bottom);
-      cursor: pointer;
-      padding: 4px;
-      margin-top: 2px;
-      font-size: 16px;
-    }
+  &__options {
+    margin-top: 12px;
   }
 
   &__footer {
@@ -99,6 +94,7 @@
   }
 
   &__cart {
+    position: relative;
     width: 54px;
     height: 54px;
     display: flex;

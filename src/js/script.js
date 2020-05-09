@@ -31,10 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  $('.product-card__title-select').on('change', setProductCardValues);
-  setProductPageValues();
-  $('.product-page__options-input').on('change', setProductPageValues);
-
   // Табы на странице товара
   showActiveTabContent();
   $('.js-tabs').on('change', showActiveTabContent);
@@ -54,26 +50,6 @@ function toggleProductsMenu() {
   $header.classList.add('header_expanded');
 };
 
-function setProductCardValues(e) {
-  const target = $(e.target);
-  const option = $(this).find(`[value="${e.target.value}"]`);
-  const img = target.parents('.product-card').find('.product-card__img');
-  const pricePrimary = target.parents('.product-card').find('.product-card__price-primary');
-  const priceSecondary = target.parents('.product-card').find('.product-card__price-secondary');
-  img.attr('src', option.data('image'));
-  pricePrimary.text(option.data('price-rub'));
-  priceSecondary.text(e.target.value);
-};
-
-function setProductPageValues() {
-  const target = $('.product-page__options-input').filter(':checked');
-  $('.js-price-primary').text(target.data('price-primary'));
-  $('.js-price-secondary').text(target.data('price-secondary'));
-  $('.product-page__img').attr('src', target.data('image'));
-  const itemInCart = getItemInCart(target.attr('id'));
-  setProductAddedQty(itemInCart && itemInCart.qty);
-};
-
 function showActiveTabContent() {
   const targetId = $('.js-tabs').filter(':checked').attr('id');
   const checkedContent = $('.js-tabs-content').filter(function() {
@@ -89,11 +65,14 @@ function getItemInCart(id) {
   return cart.find(item => item.optionId === id);
 };
 
-function setProductAddedQty(qty) {
+function setProductAddedQty($this, qty) {
+  const $cartCount = $this.find('.js-product-cart-count');
+
   if (qty) {
-    $('.js-product-cart-count').addClass('product-page__add-count_visible');
+    $cartCount.addClass('visible');
   } else {
-    $('.js-product-cart-count').removeClass('product-page__add-count_visible');
+    $cartCount.removeClass('visible');
   }
-  $('.js-product-cart-count').text(qty || '');
+
+  $cartCount.text(qty || '');
 };
