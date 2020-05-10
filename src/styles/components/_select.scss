@@ -16,7 +16,7 @@
     border-color: $brand;
 
     & .select__arrow {
-      transform: rotate(270deg);
+      transform: rotate(-90deg);
     }
 
     & .select__list {
@@ -45,7 +45,7 @@
     width: 100%;
     background: $background-main;
     padding: 6px 0;
-    @include border();
+    @include border('all', 1px, $brand);
     border-radius: 4px;
     transition: top 0.2s, opacity 0.2s;
     z-index: 2;

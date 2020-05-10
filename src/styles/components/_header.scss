@@ -393,22 +393,6 @@
   }
 }
 
-// .main-menu {
-//   margin-bottom: 48px;
-
-//   &__link {
-//     display: block;
-//     padding: 12px 0;
-//     font-size: 16px;
-//     transition: color 0.3s;
-//     text-transform: uppercase;
-    
-//     &:hover {
-//       color: $accent;
-//     }
-//   }
-// }
-
 .header-contacts {
   &__item {
     margin-bottom: 8px;
@@ -445,4 +429,51 @@
 
 .header-m {
   display: none;
+  position: fixed;
+  width: 100%;
+  background: $background-main;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  z-index: 1;
+  box-shadow: 0 0 12px $dull;
+  overflow: hidden;
+
+  &__item {
+    width: 33.33%;
+    display: flex;
+
+    &_left {
+      height: 100%;
+      justify-content: flex-start;
+    }
+
+    &_center {
+      justify-content: center;
+    }
+
+    &_right {
+      height: 100%;
+      justify-content: flex-end;
+    }
+  }
+
+  &__ham {
+    height: 48px;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    align-self: flex-start;
+    height: 112px;
+    margin-top: -33px;
+    
+    &-img {
+      height: 100%;
+    }
+  }
 }

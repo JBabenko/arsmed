@@ -259,6 +259,7 @@
 @media screen and (max-width: 424px) {
   .general-container {
     flex-direction: column;
+    padding-top: 48px;
   }
 
   .main-menu {
@@ -273,48 +274,6 @@
 
   .header-m {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 48px;
-    z-index: 1;
-    @include border(bottom);
-    overflow: hidden;
-
-    &__item {
-      width: 33.33%;
-      display: flex;
-
-      &_left {
-        height: 100%;
-        justify-content: flex-start;
-      }
-
-      &_center {
-        justify-content: center;
-      }
-
-      &_right {
-        height: 100%;
-        justify-content: flex-end;
-      }
-    }
-
-    &__ham {
-      height: 48px;
-    }
-
-    &__logo {
-      display: flex;
-      justify-content: center;
-      padding: 12px;
-      align-self: flex-start;
-      height: 112px;
-      margin-top: -33px;
-      
-      &-img {
-        height: 100%;
-      }
-    }
   }
 
   .header {
