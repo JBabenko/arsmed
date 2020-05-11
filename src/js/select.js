@@ -1,6 +1,9 @@
 $(document).ready(function() {
   $('.select').click(clickSelect);
   $('.select__input').change(changeOption);
+  $('.select__list').each(function() {
+    $(this).find('.select__input').first().change().attr('checked', 'checked');
+  });
 });
 
 function clickSelect() {

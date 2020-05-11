@@ -2,6 +2,8 @@ $(document).ready(function() {
   // Изменение количества товара для добавления в корзину
   $('.js-product-qty-btn').click(changeProductQty);
   $('.js-product-qty-input').on('keyup', productQtyWatcher);
+  $('.js-product-option').on('change', setProductValues);
+  setCartTotalCountText();
 
   // Добавление товара в корзину
   $('.js-product-container').each(function() {
@@ -9,10 +11,6 @@ $(document).ready(function() {
     const itemInCart = getItemInCart($(this).find('.js-product-option:checked').attr('id'));
     setProductAddedQty($(this), itemInCart && itemInCart.qty);
   });
-
-  $('.js-product-option').on('change', setProductValues);
-
-  setCartTotalCountText();
 
   function setProductValues() {
     const $container = $(this).closest('.js-product-container');
