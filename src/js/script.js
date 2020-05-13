@@ -32,8 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   // Табы на странице товара
-  showActiveTabContent();
-  $('.js-tabs').on('change', showActiveTabContent);
+  $('.js-tabs').on('change', showActiveTabContent).first().change().attr('checked', 'checked');
 });
 
 function toggleProductsMenu() {
@@ -51,7 +50,7 @@ function toggleProductsMenu() {
 };
 
 function showActiveTabContent() {
-  const targetId = $('.js-tabs').filter(':checked').attr('id');
+  const targetId = $(this).attr('id');
   const checkedContent = $('.js-tabs-content').filter(function() {
     return $(this).data('id') === +targetId;
   });

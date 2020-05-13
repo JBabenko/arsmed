@@ -30,8 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }); // Табы на странице товара
 
-  showActiveTabContent();
-  $('.js-tabs').on('change', showActiveTabContent);
+  $('.js-tabs').on('change', showActiveTabContent).first().change().attr('checked', 'checked');
 });
 
 function toggleProductsMenu() {
@@ -52,7 +51,7 @@ function toggleProductsMenu() {
 ;
 
 function showActiveTabContent() {
-  var targetId = $('.js-tabs').filter(':checked').attr('id');
+  var targetId = $(this).attr('id');
   var checkedContent = $('.js-tabs-content').filter(function () {
     return $(this).data('id') === +targetId;
   });
