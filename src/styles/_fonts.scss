@@ -12,9 +12,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('../fonts/icomoon.ttf?ia3cl6') format('truetype'),
-    url('../fonts/icomoon.woff?ia3cl6') format('woff'),
-    url('../fonts/icomoon.svg?ia3cl6#icomoon') format('svg');
+    url('../fonts/icomoon.ttf?tsug86') format('truetype'),
+    url('../fonts/icomoon.woff?tsug86') format('woff'),
+    url('../fonts/icomoon.svg?tsug86#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -79,6 +79,9 @@
 }
 .icon-cart:before {
   content: "\e905";
+}
+.icon-trash:before {
+  content: "\e912";
 }
 .icon-truck:before {
   content: "\e90d";

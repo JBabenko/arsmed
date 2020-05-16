@@ -12,16 +12,8 @@ const del = require('del');
 const browserSync = require('browser-sync').create();
 const smartgrid = require('smart-grid');
 
-const jsFiles = [
-    'src/js/script.js',
-    'src/js/slider.js',
-    'src/js/select.js',
-    'src/js/product.js',
-    'src/js/script-m.js',
-];
-
 function html() {
-    return gulp.src(['src/index.html', 'src/product-page.html'])
+    return gulp.src('src/*.html')
                 .pipe(rigger())
                 .pipe(gulp.dest('build'))
                 .pipe(browserSync.stream());
@@ -64,7 +56,7 @@ function editorStyles() {
 }
 
 function script() {
-    return gulp.src(jsFiles)
+    return gulp.src('src/js/*.js')
                 // .pipe(concat('script.js'))
                 .pipe(babel({
                     presets: ['@babel/env']
