@@ -35,6 +35,7 @@
     "smart-grid": "^2.1.2"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.10.1",
     "gulp-rigger": "^0.5.8"
   }
 }

@@ -1,0 +1,47 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  @include border(bottom);
+  background: $background-main;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 32px;
+
+    &:after {
+      content: '';
+      height: 100%;
+      width: 1px;
+      transform: skew(-10deg);
+      background: $dull;
+    }
+
+    &_current {
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0 16px;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $brand-hover;
+    }
+
+    &_current {
+      font-size: 1rem;
+      color: $brand;
+
+      &:hover {
+        color: $brand;
+      }
+    }
+  }
+}

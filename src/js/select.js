@@ -4,8 +4,8 @@ $(document).ready(function() {
   $('.select__list').each(function() {
     $(this).find('.select__input').first().change().attr('checked', 'checked');
   });
-});
 
+  
 function clickSelect() {
   if ($(this).hasClass('select_opened')) {
     $(this).removeClass('select_opened');
@@ -27,3 +27,5 @@ function changeOption() {
   $container.find('.select__text').text(optionText);
   $container.removeClass('select_opened');
 };
+
+});

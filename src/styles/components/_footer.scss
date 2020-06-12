@@ -1,0 +1,112 @@
+.footer {
+  padding-left: 320px;
+  margin-top: 24px;
+  @include border(top, 4px, $brand);
+  background-color: $background-main;
+
+  &__inner {
+    padding: 24px 0;
+    display: flex;
+  }
+
+  &__menu {
+    flex-grow: 1;
+    width: 100%;
+  }
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &__item {
+    width: 192px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+
+    &-link {
+      display: block;
+      font-weight: 600;
+      font-size: 1.075rem;
+      padding-bottom: 6px;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $brand;
+      }
+    }
+  }
+}
+
+.footer-submenu {
+  &__item {
+    margin-top: 6px;
+
+    &-link {
+      transition: color 0.2s;
+
+      &:hover {
+        color: $brand;
+      }
+    }
+  }
+}
+
+.footer-info {
+  display: none;
+  min-width: 180px;
+  padding: 12px 0 12px 24px;
+  @include border(left);
+
+  &__logo {
+    width: 100%;
+    max-width: 168px;
+    display: flex;
+
+    &-img {
+      width: 100%;
+    }
+  }
+
+  &__contacts {
+    margin-top: 12px;
+
+    &-title {
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    &-item {
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    &-link {
+      font-size: 1rem;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $brand;
+      }
+    }
+  }
+}
+
+.footer-rights {
+  background-color: $background-secondary;
+  @include border(top);
+  padding: 12px 0;
+
+  &__privacy-policy {
+    text-decoration: underline;
+    font-size: 1rem;
+  }
+
+  &__copyright {
+    font-size: 0.75rem;
+    margin-top: 12px;
+  }
+}

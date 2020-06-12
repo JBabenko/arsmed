@@ -3,8 +3,7 @@
 $(document).ready(function () {
   getProductsInCart();
   $(".js-checkout-form").submit(submitCheckoutForm);
-});
-
+  
 function submitCheckoutForm(e) {
   e.preventDefault();
 
@@ -127,3 +126,54 @@ function onClickDelete() {
   setCartTotalCountText();
   $('.cart__empty').show();
 };
+
+function getCart() {
+  return JSON.parse(localStorage.getItem('itemsInCart')) || [];
+}
+
+function productQtyWatcher(e) {
+  e.target.value = e.target.value.replace(/\D/gi, '').replace(/^0+/, '');
+
+  if (!e.target.value) {
+    e.target.value = 1;
+  }
+}
+
+;
+
+function changeProductQty() {
+  var action = +$(this).data('action');
+  var input = $(this).siblings('.js-product-qty-input');
+  var value = +input.val();
+  input.val(value + action);
+
+  if (+input.val() < 1) {
+    input.val(1);
+  }
+}
+
+;
+
+function setCartTotalCountText() {
+  var count = getCartTotalCount();
+
+  if (count) {
+    $('.js-cart-total-count-wrap').removeClass('hidden');
+    $('.js-cart-total-count').text(count);
+  } else {
+    $('.js-cart-total-count-wrap').addClass('hidden');
+  }
+}
+
+;
+
+function getCartTotalCount() {
+  var cart = getCart();
+  return cart.reduce(function (acc, item) {
+    return acc += item.qty;
+  }, 0);
+}
+
+;
+
+});

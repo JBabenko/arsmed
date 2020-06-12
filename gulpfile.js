@@ -27,7 +27,9 @@ function styles() {
                 .pipe(concat('styles.css'))
                 .pipe(gcmq())
                 .pipe(autoprefixer({
-                    overrideBrowserslist: ['> 0.1%'],
+                    overrideBrowserslist: ['last 2 versions'],
+                    flexbox: true,
+                    grid: true,
                     cascade: false
                 }))
                 .pipe(cleanCSS({
@@ -45,7 +47,7 @@ function editorStyles() {
                 .pipe(concat('editor.css'))
                 .pipe(gcmq())
                 .pipe(autoprefixer({
-                    overrideBrowserslist: ['> 0.1%'],
+                    overrideBrowserslist: ['last 2 versions'],
                     cascade: false
                 }))
                 .pipe(cleanCSS({
@@ -56,14 +58,14 @@ function editorStyles() {
 }
 
 function script() {
-    return gulp.src('src/js/*.js')
+    return gulp.src(['node_modules/@babel/polyfill/dist/polyfill.min.js', 'src/js/*.js'])
                 // .pipe(concat('script.js'))
                 .pipe(babel({
-                    presets: ['@babel/env']
+                    presets: ['@babel/env'],
                 }))
-                // .pipe(uglify({
-                //     toplevel: true
-                // }))
+                .pipe(uglify({
+                    toplevel: true
+                }))
                 .pipe(gulp.dest('build/js'))
                 .pipe(browserSync.stream());
 }

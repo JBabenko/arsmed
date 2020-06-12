@@ -9,6 +9,7 @@
 </head>
 <body class="body">
   <div class="general-container">
+    <div class="menu-background"></div>
     <div class="header-m">
       <div class="header-m__ham header-m__item header-m__item_left">
         <svg class="ham ham2 js-ham-btn" viewBox="0 0 100 100" width="60" onclick="this.classList.toggle('active')">
@@ -198,25 +199,38 @@
           <nav class="header__main-menu main-menu">
             <ul class="main-menu__list">
               <li class="main-menu__item js-products-trigger">
-                <span class="main-menu__item-text">Каталог продукции</span>
-                <div class="main-menu__item-icon icon-grid"></div>
+                <span class="main-menu__item-link">
+                  <span class="main-menu__item-text">Каталог продукции</span>
+                  <div class="main-menu__item-icon icon-grid"></div>
+                </span>
+                
               </li>
               <li class="main-menu__item">
-                <a href="/checkout.html" class="main-menu__item-text">Оформить заказ</a>
-                <div class="main-menu__item-icon icon-cart"></div>
-                <div class="main-menu__cart-count js-cart-total-count-wrap">(<span class="main-menu__cart-count-text js-cart-total-count"></span>)</div>
+                <a href="/checkout.html" class="main-menu__item-link">
+                  <span class="main-menu__item-text">Оформить заказ</span>
+                  <div class="main-menu__item-icon icon-cart"></div>
+                  <div class="main-menu__cart-count js-cart-total-count-wrap">
+                    <span class="main-menu__cart-count-text js-cart-total-count"></span>
+                  </div>
+                </a>
               </li>
               <li class="main-menu__item">
-                <a href="#" class="main-menu__item-text">Каталоги и документы</a>
-                <div class="main-menu__item-icon icon-folder"></div>
+                <a href="/files.html" class="main-menu__item-link">
+                  <span class="main-menu__item-text">Каталоги и документы</span>
+                  <div class="main-menu__item-icon icon-folder"></div>
+                </a>
               </li>
               <li class="main-menu__item">
-                <a href="#" class="main-menu__item-text">Доставка</a>
-                <div class="main-menu__item-icon icon-truck"></div>
+                <a href="#" class="main-menu__item-link">
+                  <span class="main-menu__item-text">Доставка</span>
+                  <div class="main-menu__item-icon icon-truck"></div>
+                </a>
               </li>
                 <li class="main-menu__item">
-                <a href="#" class="main-menu__item-text">Контакты</a>
-                <div class="main-menu__item-icon icon-users"></div>
+                <a href="#" class="main-menu__item-link">
+                  <span class="main-menu__item-text">Контакты</span>
+                  <div class="main-menu__item-icon icon-users"></div>
+                </a>
               </li>
             </ul>
           </nav>
@@ -475,9 +489,140 @@
       </div>
     </main>
   </div>
+  <footer class="footer">
+    <div class="content-container content-container_padding">
+      <div class="footer__inner">
+        <nav class="footer__menu">
+          <ul class="footer-menu">
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__item-link">Остеопластические материалы</a>
+              <ul class="footer-submenu">
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Geistlich</a>
+                </li>
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Osteobiol</a>
+                </li>
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Botiss</a>
+                </li>
+              </ul>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__item-link">Расходные материалы</a>
+              <ul class="footer-submenu">
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Скребки</a>
+                </li>
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Шовный материал</a>
+                </li>
+              </ul>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__item-link">Остеопластические материалы</a>
+              <ul class="footer-submenu">
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Geistlich</a>
+                </li>
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Osteobiol</a>
+                </li>
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Botiss</a>
+                </li>
+              </ul>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__item-link">Остеопластические материалы</a>
+              <ul class="footer-submenu">
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Geistlich</a>
+                </li>
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Osteobiol</a>
+                </li>
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Botiss</a>
+                </li>
+              </ul>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__item-link">Остеопластические материалы</a>
+              <ul class="footer-submenu">
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Geistlich</a>
+                </li>
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Osteobiol</a>
+                </li>
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Botiss</a>
+                </li>
+              </ul>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__item-link">Остеопластические материалы</a>
+              <ul class="footer-submenu">
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Geistlich</a>
+                </li>
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Osteobiol</a>
+                </li>
+                <li class="footer-submenu__item">
+                  <a href="#" class="footer-submenu__item-link">Botiss</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section class="footer-info">
+          <div class="footer-info__logo">
+            <img src="./images/logo_shop.png" alt="" class="footer-info__logo-img">
+          </div>
+          <div class="footer-info__contacts">
+            <h3 class="footer-info__contacts-title">Наши контакты</h3>
+            <ul class="footer-info__contacts-list">
+              <li class="footer-info__contacts-item">
+                <a class="footer-info__contacts-link" href="tel:+78129297079">+7 (812) 929-70-79</a>
+              </li>
+              <li class="footer-info__contacts-item">
+                <a class="footer-info__contacts-link" href="tel:+78129297079">+7 (812) 929-70-79</a>
+              </li>
+              <li class="footer-info__contacts-item">
+                <a class="footer-info__contacts-link" href="tel:+79214433377">+7 (921) 443-33-77</a>
+              </li>
+              <li class="footer-info__contacts-item">
+                <a class="footer-info__contacts-link" href="mailto:arsmedspb@mail.ru">arsmedspb@mail.ru</a>
+              </li>
+              <li class="footer-info__contacts-item contacts-messager">
+                <a class="contacts-messager__link" href="https://telegram.im/@klazomania" target="_blank">
+                  <div class="icon-telegram contacts-messager__icon contacts-messager__icon_telegram"></div>
+                </a>
+                <a class="contacts-messager__link" href="https://api.whatsapp.com/send?phone=79214433377" target="_blank">
+                  <div class="icon-whatsapp contacts-messager__icon contacts-messager__icon_whatsapp"></div>
+                </a>
+                <a class="contacts-messager__link" href="viber://add?number=%2B79214433377" target="_blank">
+                  <div class="icon-viber contacts-messager__icon contacts-messager__icon_viber"></div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+    <section class="footer-rights">
+      <div class="content-container content-container_padding">
+        <a href="#" class="footer-rights__privacy-policy" target="_blank">Политика конфиденциальности</a>
+        <p class="footer-rights__copyright">Вся предоставленная на сайте информация не является публичной офертой. АРСМЕД © 2020</p>
+      </div>
+    </section>
+  </footer>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+  <script src="./js/polyfill.min.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/script-m.js"></script>
   <script src="./js/product.js"></script>

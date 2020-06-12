@@ -7,12 +7,15 @@
 @import './components/text-block';
 
 @import './components/header';
+@import './components/footer';
 @import './components/slider';
 @import './components/products';
 @import './components/checkout';
 @import './components/news';
+@import './components/files';
 @import './components/select';
 @import './components/loader';
+@import './components/breadcrumbs';
 
 @import './components/product-page';
 
@@ -46,11 +49,11 @@ html {
   background: $background-secondary;
   padding-left: 320px;
   min-height: 100vh;
-  max-width: 100%;
+  width: 100%;
 }
 
 .section-title {
-  padding: 48px 24px 12px;
+  padding: 24px 24px 12px;
   margin-bottom: 24px;
   font-size: 26px;
   @include border(bottom, 1px, $brand);
