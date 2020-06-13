@@ -4,7 +4,11 @@
   @include row-flex();
   justify-content: center;
   @include md(justify-content, space-evenly);
-  // @include lg(justify-content, flex-start);
+  
+  &__description {
+    padding: 24px;
+    @include border(top);
+  }
 }
 
 .product-card {

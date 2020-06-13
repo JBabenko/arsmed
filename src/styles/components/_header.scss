@@ -186,6 +186,7 @@
   width: 100%;
   z-index: 9;
   background: $background-main;
+  overflow-y: auto;
   transition: left 0.3s;
 
   &_visible {
@@ -216,46 +217,78 @@
   }
 
   &__list {
-    padding: 48px 36px;
     width: 100%;
-    height: 100%;
-    @include border(right);
+    padding: 24px;
+    height: auto;
   }
 
   &__item {
-    margin-bottom: 24px;
-    cursor: pointer;
+    @include border(bottom);
+    padding: 0;
+    margin: 0;
 
     &-text {
+      cursor: pointer;
       font-size: 17px;
       transition: color 0.3s;
+      position: relative;
+      display: block;
+      padding: 12px;
+      font-size: 18px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 3px;
+        top: 50%;
+        margin-top: -1.5px;
+        left: -52px;
+        background-color: $brand;
+        z-index: 10;
+        transition: left 0.3s;
+      }
+  
+      &:after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 3px;
+        top: 50%;
+        margin-top: -1.5px;
+        left: -34px;
+        background-color: $dull;
+        z-index: 9;
+        transition: left 0.3s;
+      }
+
+      &:hover:before {
+        left: -34px;
+      }
+
+      &.active {
+        color: $brand;
+
+        &:before {
+          left: -34px;
+        }
+      }
     }
 
     &:hover .products-menu__item-text {
       color: $brand
     }
-
-    &:hover .products-menu-sub {
-      display: flex;
-    }
   }
 
   &-sub {
-    position: absolute;
-    left: 100%;
-    top: 0;
     transition: opacity 0.3s, transform 0.3s;
-    // min-height: 360px;
-    width: max-content;
-    max-width: calc(100vw - (320px * 2));
-    padding: 36px;
     background: $background-main;
-    @include border(bottom);
-    @include border(right);
-    display: none;
-    flex-wrap: wrap;
     z-index: 1;
-    width: fit-content;
+    display: none;
+    padding: 12px;
+    @include border(left, 1px, $brand);
+    min-width: 100%;
+    margin: 12px 0 12px;
 
     &:before {
       content: '';
@@ -267,20 +300,40 @@
     }
 
     &__item {
-      width: 144px;
-      margin-left: 24px;
-      margin-bottom: 48px;
+      margin: 6px 0;
+
+      &-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      &-expand {
+        display: block;
+        padding: 6px;
+        @include border();
+        border-radius: 50%;
+        cursor: pointer;
+        transform: rotate(90deg);
+        transition: transform 0.2s, color 0.2s, border-color 0.2s;
+
+        &:hover {
+          border-color: $brand-light;
+        }
+
+        &.active {
+          color: $brand;
+          border-color: $brand;
+          transform: rotate(-90deg);
+        }
+      }
 
       &-text {
         display: block;
         font-size: 16px;
         padding: 6px;
-        @include border(bottom);
+        margin-left: 6px;
+        flex-grow: 1;
         transition: color 0.2s;
-
-        &_not-link {
-          display: none;
-        }
 
         &:hover {
           color: $brand;
@@ -290,7 +343,10 @@
   }
 
   &-sub2 {
-    margin-top: 12px;
+    display: none;
+    margin: 12px;
+    padding-left: 12px;
+    @include border(left, 1px, $brand-light);
 
     &__item {
       padding: 6px;
@@ -303,103 +359,6 @@
         display: block;
         transition: color 0.2s;
       }
-    }
-  }
-}
-
-.products-menu_m {
-  overflow-y: auto;
-
-  & .products-menu {
-    &__list {
-      border: none;
-      padding: 24px;
-      height: auto;
-    }
-
-    &__item {
-      @include border(bottom);
-      padding: 0;
-      margin: 0;
-
-      &-text {
-        position: relative;
-        display: block;
-        padding: 12px;
-        font-size: 18px;
-
-        &:before {
-          content: '';
-          position: absolute;
-          width: 24px;
-          height: 3px;
-          top: 50%;
-          margin-top: -1.5px;
-          left: -52px;
-          background-color: $brand;
-          z-index: 10;
-          transition: left 0.3s;
-        }
-    
-        &:after {
-          content: '';
-          position: absolute;
-          width: 24px;
-          height: 3px;
-          top: 50%;
-          margin-top: -1.5px;
-          left: -34px;
-          background-color: $dull;
-          z-index: 9;
-          transition: left 0.3s;
-        }
-
-        &:hover:before {
-          left: -34px;
-        }
-
-        &.active {
-          color: $brand;
-
-          &:before {
-            left: -34px;
-          }
-        }
-      }
-
-      &:hover .products-menu-sub {
-        display: none;
-      }
-    }
-
-    &-sub {
-      display: none;
-      position: static;
-      border: none;
-      padding: 12px;
-      @include border(left, 1px, $brand);
-      width: 100%;
-      min-width: 100%;
-      margin: 12px 0 12px;
-
-      &__item {
-        margin: 6px 0;
-
-        &-text {
-          border: none;
-
-          &.active {
-            color: $brand;
-          }
-        }
-      }
-    }
-
-    &-sub2 {
-      display: none;
-      margin: 12px;
-      padding-left: 12px;
-      @include border(left, 1px, $brand-light);
     }
   }
 }

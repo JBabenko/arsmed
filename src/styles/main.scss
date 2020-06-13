@@ -3,7 +3,6 @@
 @import './reset';
 @import './fonts';
 
-@import './editor';
 @import './components/text-block';
 
 @import './components/header';
@@ -50,6 +49,7 @@ html {
   padding-left: 320px;
   min-height: 100vh;
   width: 100%;
+  float: left;
 }
 
 .section-title {

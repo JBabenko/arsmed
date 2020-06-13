@@ -170,18 +170,6 @@
     &__close-btn {
       display: block;
     }
-
-    &-sub {
-      &__item {
-        &-text {
-          display: none;
-
-          &_not-link {
-            display: block;
-          }
-        }
-      }
-    }
   }
 
   .cart-item {

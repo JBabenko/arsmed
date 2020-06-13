@@ -36,6 +36,23 @@ $(document).ready(function () {
     }
   })
 
+  // Меню продукции
+  for (let i = 0; i < 2; i++) {
+    const menuIndex = i === 1 ? '' : i;
+    const menuPostfix = i ? `-sub${menuIndex}` : '';
+    const currentItems = $productsMenu.find(`.js-menu${menuPostfix}-expand-trigger`);
+
+    currentItems.click(function() {
+      const nextLevel = i ? i + 1 : '';
+      const nextChild = $(this).closest('.js-products-menu-item').find(`.products-menu-sub${nextLevel}`);
+
+      $(this).toggleClass('active');
+      nextChild.slideToggle(300);
+    });
+  }
+
+  $('.header-m').find('.js-ham-btn').attr('width', 48);
+
   // Табы на странице товара
   $('.js-tabs').on('change', showActiveTabContent).first().change().attr('checked', 'checked');
 });
