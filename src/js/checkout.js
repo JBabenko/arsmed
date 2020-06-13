@@ -61,7 +61,7 @@ function getProductsInCart() {
                     .attr('src', item.image)
                     .attr('alt', `${item.title} ${item.optionTitle}`);
         
-        $($cartItem).find('.cart-item__name-link')
+        $($cartItem).find('.cart-item__name')
                     .text(`${item.title || ''} ${item.optionTitle || ''}`.trim())
                     .attr('href', item.url);
 
