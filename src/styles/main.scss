@@ -12,6 +12,7 @@
 @import './components/checkout';
 @import './components/news';
 @import './components/files';
+@import './components/contacts';
 @import './components/select';
 @import './components/loader';
 @import './components/breadcrumbs';
@@ -57,4 +58,15 @@ html {
   margin-bottom: 24px;
   font-size: 26px;
   @include border(bottom, 1px, $brand);
+}
+
+.iconed-title {
+  display: flex;
+  align-items: center;
+  padding-bottom: 12px;
+
+  &__icon {
+    font-size: 60px;
+    padding-right: 24px;
+  }
 }

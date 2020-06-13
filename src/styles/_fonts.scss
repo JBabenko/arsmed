@@ -12,9 +12,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('../fonts/icomoon.ttf?tsug86') format('truetype'),
-    url('../fonts/icomoon.woff?tsug86') format('woff'),
-    url('../fonts/icomoon.svg?tsug86#icomoon') format('svg');
+    url('../fonts/icomoon.ttf?c1yh1y') format('truetype'),
+    url('../fonts/icomoon.woff?c1yh1y') format('woff'),
+    url('../fonts/icomoon.svg?c1yh1y#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -23,7 +23,7 @@
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
-  speak: none;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -35,17 +35,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-usd:before {
-  content: "\e906";
+.icon-courier:before {
+  content: "\e913";
 }
-.icon-eur:before {
-  content: "\e907";
+.icon-logistics:before {
+  content: "\e914";
 }
-.icon-rub:before {
-  content: "\e908";
+.icon-customer:before {
+  content: "\e915";
 }
-.icon-chf:before {
-  content: "\e909";
+.icon-pay:before {
+  content: "\e916";
 }
 .icon-telegram:before {
   content: "\e900";
@@ -71,9 +71,6 @@
 .icon-minus:before {
   content: "\e910";
 }
-.icon-phone:before {
-  content: "\e90c";
-}
 .icon-plus:before {
   content: "\e911";
 }
@@ -91,4 +88,28 @@
 }
 .icon-x:before {
   content: "\e90f";
+}
+.icon-usd:before {
+  content: "\e906";
+}
+.icon-eur:before {
+  content: "\e907";
+}
+.icon-rub:before {
+  content: "\e908";
+}
+.icon-chf:before {
+  content: "\e909";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-mail:before {
+  content: "\e945";
+}
+.icon-location:before {
+  content: "\e948";
+}
+.icon-clock:before {
+  content: "\e94e";
 }

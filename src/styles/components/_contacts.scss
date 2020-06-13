@@ -1,0 +1,55 @@
+.contacts {
+  display: flex;
+
+  &__section {
+    padding: 24px;
+
+    &_contacts {
+      width: 30%;
+    }
+
+    &_map {
+      width: 70%;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 36px;
+
+    &-icon {
+      font-size: 1.8rem;
+      margin-right: 16px;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.25rem;
+    }
+
+    &-link {
+      padding: 4px 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.details {
+  margin-top: 48px;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 24px;
+    font-size: 1.4rem;
+  }
+
+  &__row {
+    margin-bottom: 6px;
+    font-size: 1rem;
+  }
+}
