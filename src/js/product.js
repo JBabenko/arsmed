@@ -11,16 +11,34 @@ $(document).ready(function () {
     $(this).find('.js-add-to-cart').click(addProductToCart);
     var itemInCart = getItemInCart($(this).find('.js-product-option:checked').attr('id'));
     setProductAddedQty($(this), itemInCart && itemInCart.qty);
+
+    if (!$(this).find('.js-product-option').length && !$(this).find('.js-product-price-primary').text().trim()) {
+      $(this).find('.js-product-price-primary').text('Цену уточняйте');
+      $(this).find('.js-currency-icon:visible').hide();
+      $(this).find('.js-product-price-secondary:visible').hide();
+    }
   });
   $('.product-page__options').find('.js-product-option').first().change().attr('checked', 'checked');
 
   function setProductValues() {
     var $container = $(this).closest('.js-product-container');
-    $container.find('.js-product-price-primary').text($(this).data('price-primary'));
-    $container.find('.js-product-price-secondary').text($(this).data('price-secondary'));
-    $container.find('.js-product-img').attr('src', $(this).data('image'));
+
+    if (!$(this).data('price-primary')) {
+      $container.find('.js-product-price-primary').text('Цену уточняйте');
+      $container.find('.js-currency-icon:visible').hide();
+      $container.find('.js-product-price-secondary:visible').hide();
+    } else {
+      $container.find('.js-product-price-primary').text($(this).data('price-primary'));
+      $container.find('.js-product-price-secondary').text($(this).data('price-secondary'));
+      $container.find('.js-product-img').attr('src', $(this).data('image'));
+
+      $container.find('.js-currency-icon:hidden').show();
+      $container.find('.js-product-price-secondary:hidden').show();
+    }
+    
     var itemInCart = getItemInCart($(this).attr('id'));
     setProductAddedQty($container, itemInCart && itemInCart.qty);
+    
   }
   
   ;

@@ -55,7 +55,7 @@
 }
 
 .footer-info {
-  display: none;
+  display: block;
   min-width: 180px;
   padding: 12px 0 12px 24px;
   @include border(left);
@@ -67,6 +67,7 @@
 
     &-img {
       width: 100%;
+      opacity: 0.6;
     }
   }
 
