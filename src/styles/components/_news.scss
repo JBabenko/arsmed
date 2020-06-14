@@ -61,3 +61,28 @@
     font-size: 1rem;
   }
 }
+
+.news {
+  &__title {
+    padding-bottom: 0 !important;
+  }
+
+  &__date {
+    display: block;
+    font-size: 1rem;
+    color: $text-light;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  &__picture {
+    float: left;
+    padding: 24px;
+    margin-right: 24px;
+    background: $background-secondary;
+
+    &-img {
+      max-width: 420px;
+    }
+  }
+}

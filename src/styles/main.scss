@@ -12,7 +12,6 @@
 @import './components/checkout';
 @import './components/news';
 @import './components/files';
-@import './components/contacts';
 @import './components/select';
 @import './components/loader';
 @import './components/breadcrumbs';
@@ -56,7 +55,7 @@ html {
 .section-title {
   padding: 24px 24px 12px;
   margin-bottom: 24px;
-  font-size: 26px;
+  font-size: 1.625rem;
   @include border(bottom, 1px, $brand);
 }
 
