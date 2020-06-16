@@ -218,7 +218,7 @@
 
   &__list {
     width: 100%;
-    padding: 24px;
+    padding: 24px 12px;
     height: auto;
   }
 
@@ -227,6 +227,38 @@
     padding: 0;
     margin: 0;
 
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      padding: 0 6px;
+    }
+
+    &-expand {
+      padding: 6px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.2s;
+
+      & .expand-icon {
+        transform: rotate(90deg);
+        transition: transform 0.2s, color 0.2s;
+        font-size: 18px;
+      }
+
+      &:hover {
+        background-color: $brand-light;
+      }
+
+      &.active {
+        color: $background-main;
+        background-color: $brand;
+
+        & .expand-icon {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
     &-text {
       cursor: pointer;
       font-size: 17px;
@@ -234,49 +266,13 @@
       position: relative;
       display: block;
       padding: 12px;
+      padding-left: 6px;
       font-size: 18px;
+      margin-left: 6px;
 
-      &:before {
-        content: '';
-        position: absolute;
-        width: 24px;
-        height: 3px;
-        top: 50%;
-        margin-top: -1.5px;
-        left: -52px;
-        background-color: $brand;
-        z-index: 10;
-        transition: left 0.3s;
-      }
-  
-      &:after {
-        content: '';
-        position: absolute;
-        width: 24px;
-        height: 3px;
-        top: 50%;
-        margin-top: -1.5px;
-        left: -34px;
-        background-color: $dull;
-        z-index: 9;
-        transition: left 0.3s;
-      }
-
-      &:hover:before {
-        left: -34px;
-      }
-
-      &.active {
+      &:hover {
         color: $brand;
-
-        &:before {
-          left: -34px;
-        }
       }
-    }
-
-    &:hover .products-menu__item-text {
-      color: $brand
     }
   }
 
@@ -285,19 +281,9 @@
     background: $background-main;
     z-index: 1;
     display: none;
-    padding: 12px;
+    padding: 12px 14px;
     @include border(left, 1px, $brand);
-    min-width: 100%;
-    margin: 12px 0 12px;
-
-    &:before {
-      content: '';
-      position: absolute;
-      left: -48px;
-      top: 0;
-      height: 100%;
-      width: 48px;
-    }
+    margin: 0 0 12px 19px;
 
     &__item {
       margin: 6px 0;
