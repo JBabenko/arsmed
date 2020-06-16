@@ -10,12 +10,12 @@ $(document).ready(function () {
   const $closeCatalogBtn = $('.products-menu__close-btn');
   $expandMenuBtn.click(function() {
     $header.toggleClass('header_expanded');
-    toggleNoScroll();
+    $('.menu-background').fadeToggle(200);
   });
   $closeMenuBtn.click(function() {
     $header.toggleClass('header_expanded');
     $expandMenuBtn.toggleClass('active');
-    toggleNoScroll();
+    $('.menu-background').fadeToggle(200);
   });
   $closeCatalogBtn.click(function() {
     toggleProductsMenu();
@@ -32,7 +32,6 @@ $(document).ready(function () {
       $header.toggleClass('header_expanded');
       $expandMenuBtn.toggleClass('active');
       $('.menu-background').fadeOut(200);
-      $('.body').removeClass('no-scroll');
     }
   })
 
@@ -57,11 +56,6 @@ $(document).ready(function () {
   $('.js-tabs').on('change', showActiveTabContent).first().change().attr('checked', 'checked');
 });
 
-function toggleNoScroll() {
-  $('.menu-background').fadeToggle(200);
-  $('.body').toggleClass('no-scroll');
-};
-
 function toggleProductsMenu() {
   const $header = $('.header');
   const $productsMenu = $('.products-menu');
@@ -72,9 +66,9 @@ function toggleProductsMenu() {
   $productsMenuTrigger.toggleClass('main-menu__item_active');
   if (!$header.hasClass('header_expanded')) {
     $expandMenuBtn.toggleClass('active');
+    $('.menu-background').fadeToggle(200);
   }
   $header.addClass('header_expanded');
-  toggleNoScroll();
 };
 
 function showActiveTabContent() {
