@@ -12,7 +12,7 @@
 @import './components/checkout';
 @import './components/contacts';
 @import './components/news';
-@import './components/files';
+@import './components/category';
 @import './components/select';
 @import './components/loader';
 @import './components/breadcrumbs';
@@ -68,5 +68,40 @@ html {
   &__icon {
     font-size: 60px;
     padding-right: 24px;
+  }
+}
+
+.text-link {
+  text-decoration: underline;
+  color: $brand;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $brand-hover;
+  }
+}
+
+.tags {
+  &__item {
+    display: inline-block;
+    margin: 0 6px 6px 0;
+
+    &-text {
+      display: block;
+      color: $text-light;
+      border-radius: 4px;
+      @include border('all', 1px, $text-light);
+      padding: 2px 12px;
+      font-size: 0.825rem;
+
+      &_link {
+        transition: border-color 0.2s, color 0.2s;
+
+        &:hover {
+          border-color: $brand;
+          color: $brand;
+        }
+      }
+    }
   }
 }

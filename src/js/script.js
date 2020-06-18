@@ -25,11 +25,11 @@ $(document).ready(function () {
     const target = $(e.target);
 
     if ($productsMenu.hasClass('products-menu_visible') && !target.closest('.products-menu').length && !target.closest('.js-products-trigger').length) {
-      toggleProductsMenu();
+      toggleProductsMenu(e);
     }
 
     if ($header.hasClass('header_expanded') && !target.closest('.header').length && !target.closest('.js-ham-btn').length) {
-      $header.toggleClass('header_expanded');
+      $header.removeClass('header_expanded');
       $expandMenuBtn.toggleClass('active');
       $('.menu-background').fadeOut(200);
     }
@@ -56,7 +56,9 @@ $(document).ready(function () {
   $('.js-tabs').on('change', showActiveTabContent).first().change().attr('checked', 'checked');
 });
 
-function toggleProductsMenu() {
+function toggleProductsMenu(e) {
+  const target = e && $(e.target);
+
   const $header = $('.header');
   const $productsMenu = $('.products-menu');
   const $productsMenuTrigger = $('.js-products-trigger');
@@ -64,10 +66,16 @@ function toggleProductsMenu() {
 
   $productsMenu.toggleClass('products-menu_visible');
   $productsMenuTrigger.toggleClass('main-menu__item_active');
+
   if (!$header.hasClass('header_expanded')) {
     $expandMenuBtn.toggleClass('active');
     $('.menu-background').fadeToggle(200);
+  } else if (target && target.closest('.header').length && (!$('.menu-background:visible').length || !$productsMenu.hasClass('products-menu_visible'))) {
+    $('.menu-background').fadeToggle(200);
+    $header.removeClass('header_expanded');
+    return;
   }
+
   $header.addClass('header_expanded');
 };
 

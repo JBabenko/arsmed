@@ -1,12 +1,13 @@
-.files-page {
+.brands-page {
   &__text {
     font-size: 1.125rem;
     padding-bottom: 24px;
   }
 }
 
-.files-item {
-  padding: 24px;
+
+.brand-card {
+  padding: 24px 24px 12px;
   @include border;
   border-radius: 12px;
   background-color: $background-main;
@@ -31,8 +32,17 @@
     padding: 0 48px;
     flex-grow: 1;
 
+    &-link {
+      transition: color 0.2s;
+
+      &:hover {
+        color: $brand;
+      }
+    }
+
     &-title {
       font-size: 1.5rem;
+      margin-bottom: 6px;
     }
 
     &-desc {
@@ -44,6 +54,7 @@
   &__bottom {
     display: flex;
     justify-content: space-between;
+    margin-top: 24px;
   }
 
   &__links {
@@ -60,18 +71,6 @@
       &:hover {
         color: $brand;
       }
-    }
-  }
-
-  &__tags {
-    &-item {
-      display: inline-block;
-      padding: 2px 12px;
-      border-radius: 4px;
-      margin: 0 6px 6px 0;
-      color: $text-light;
-      font-size: 0.825rem;
-      @include border('all', 1px, $text-light);
     }
   }
 }
