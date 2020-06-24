@@ -3,15 +3,13 @@ $(document).ready(function() {
     container: ".main-slider__list",
     items: 1,
     speed: 500,
-    autoplay: !0,
+    autoplay: !1,
     autoplayTimeout: 4e3,
     autoplayButtonOutput: !1,
-    controls: !0,
-    controlsContainer: ".main-slider__controls",
-    nextButton: ".main-slider__controls-btn_next",
-    prevButton: ".main-slider__controls-btn_prev",
+    controls: !1,
+    navContainer: ".main-slider__nav",
     loop: !0,
-    nav: !1,
+    nav: !0,
     mouseDrag: !0
   });
   $(".main-slider").on("mouseenter", function () {
