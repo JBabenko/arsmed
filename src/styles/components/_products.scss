@@ -12,11 +12,10 @@
 }
 
 .product-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 408px;
-  border-radius: 3px;
-  @include box-shadow();
   @include col();
   @include size(12);
   @include size-sm(6);
@@ -25,8 +24,16 @@
   min-width: 240px;
   max-width: 288px;
   margin-bottom: 48px;
-  padding: 24px 24px 12px 24px;
-  background-color: $background-main;
+
+  &__main {
+    position: relative;
+    z-index: 1;
+    padding: 24px 24px 12px 24px;
+    height: 100%;
+    background-color: $background-main;
+    @include box-shadow();
+    border-radius: 4px;
+  }
 
   &__picture {
     height: 180px;
@@ -125,5 +132,32 @@
     &:hover .product-card__cart-icon {
       color: $brand;
     }
+  }
+
+  &__info {
+    position: absolute;
+    left: 1px;
+    bottom: 0;
+    width: calc(100% - 2px);
+    max-height: 100%;
+    padding: 24px 24px 12px;
+    background-color: $background-main;
+    border-radius: 0 0 4px 4px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    box-shadow: 0px 1px 4px 0 $dull;
+    z-index: 0;
+
+    & ul {
+      margin-left: 12px;
+
+      & > li {
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+  &:hover .product-card__info {
+    transform: translateY(calc(100% - 12px));
+    // box-shadow: 0px 1px 12px 0 $dull;
   }
 }

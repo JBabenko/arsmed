@@ -3,7 +3,7 @@ $(document).ready(function() {
     container: ".main-slider__list",
     items: 1,
     speed: 500,
-    autoplay: !1,
+    autoplay: !0,
     autoplayTimeout: 4e3,
     autoplayButtonOutput: !1,
     controls: !1,
