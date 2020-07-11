@@ -6,10 +6,12 @@
 
   &__list {
     display: flex;
-    align-items: center;
   }
 
   &__item {
+    display: inline-flex !important;
+    align-items: center;
+
     &-content {
       width: 100%;
       min-height: 300px;
@@ -120,17 +122,14 @@
     min-width: 120px;
     font-size: 1.5rem;
     padding: 4px 48px;
-    color: $brand;
-    background-color: $background-main;
-    @include border('all', 1px, $brand);
+    color: $background-main;
+    background-color: $brand;
     border-radius: 4px;
     margin-top: 24px;
-    transition: all 0.2s;
+    transition: background-color 0.2s;
 
     &:hover {
-      border-color: $brand;
-      color: $background-main;
-      background-color: $brand;
+      background-color: $brand-hover;
     }
   }
 }

@@ -22,11 +22,11 @@
 }
 
 @mixin box-shadow($color: $dull, $hover: 'true') {
-  box-shadow: 0px 1px 4px 0 $dull;
+  box-shadow: 0px 1px 4px 0 $color;
   @if $hover != 'no-hover' {
     transition: box-shadow 0.3s;
      &:hover {
-      box-shadow: 0px 1px 12px 0 $dull;
+      box-shadow: 0px 1px 12px 0 $color;
     }
   }
 }

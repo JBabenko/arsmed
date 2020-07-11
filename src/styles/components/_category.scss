@@ -8,7 +8,7 @@
 
 .brand-card {
   padding: 24px 24px 12px;
-  @include border;
+  @include border('all', 1px, $accent);
   border-radius: 12px;
   background-color: $background-main;
   margin-top: 24px;

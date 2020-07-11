@@ -29,7 +29,8 @@
 
   &__arrow {
     position: absolute;
-    top: 6px;
+    top: 50%;
+    margin-top: -12px;
     right: 4px;
     display: inline-block;
     transform: rotate(90deg);
