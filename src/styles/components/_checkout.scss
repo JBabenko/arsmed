@@ -49,7 +49,7 @@
     height: 100%;
     width: 180px;
 
-    &:hover + .cart-item__name .cart-item__name-link {
+    &:hover+.cart-item__name .cart-item__name-link {
       color: $brand;
     }
 
@@ -93,6 +93,7 @@
   @include border();
   border-radius: 4px;
   padding: 6px 0;
+  width: fit-content;
 
   &__input {
     width: 48px;

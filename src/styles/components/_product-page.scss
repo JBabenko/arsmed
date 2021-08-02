@@ -59,7 +59,7 @@
     &-input {
       display: none;
 
-      &:checked + .product-page__options-label {
+      &:checked+.product-page__options-label {
         color: $brand;
 
         &:before {
@@ -120,7 +120,7 @@
 
   &__price {
     margin-bottom: 48px;
-  
+
     &-text {
       display: flex;
       align-items: center;
@@ -218,7 +218,7 @@
     &-input {
       display: none;
 
-      &:checked + .product-page__tabs-label {
+      &:checked+.product-page__tabs-label {
         color: $brand;
 
         &:before {
@@ -267,6 +267,110 @@
       &_active {
         display: block;
       }
+    }
+  }
+}
+
+.product-params {
+  max-width: 300px;
+
+  &__param {
+    margin-bottom: 24px;
+
+    &-title {
+      font-size: 16px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid $brand;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 24px;
+    border: 1px solid $brand;
+    margin-right: 6px;
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 0;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: $brand-light;
+    }
+
+    &-input {
+      display: none;
+
+      &:checked+.product-params__item {
+        color: $brand;
+
+        background-color: $brand;
+        color: $background-secondary;
+
+        &:hover {
+          background-color: $brand;
+        }
+      }
+    }
+
+    &-label {
+      margin-bottom: 12px;
+      padding-left: 36px;
+      font-size: 1.125rem;
+      cursor: pointer;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.products-table {
+  margin-top: 24px;
+  @include border();
+  background: $background-main;
+  border-radius: 6px;
+  padding: 24px 36px 36px;
+
+  &__table {
+    width: 100%;
+  }
+
+  &__col {
+    padding: 6px 18px;
+    font-size: 16px;
+
+    &_head {
+      padding-bottom: 18px;
+      border-bottom: 1px solid $brand;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    background-color: $brand;
+    padding: 8px;
+    color: $background-secondary;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: $brand-hover;
     }
   }
 }

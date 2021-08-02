@@ -20,6 +20,23 @@ $(document).ready(function () {
   });
   $('.product-page__options').find('.js-product-option').first().change().attr('checked', 'checked');
 
+  const productId = $('.js-product-with-params');
+
+  $.ajax({
+    type: "POST",
+    url: "/api/product-params/",
+    data: { productId },
+    beforeSend: function() {
+    //  $('.js-cart-loader').show();
+    },
+    success: (res) => {
+      console.log(res);
+    },
+    complete: function(){
+      // $('.js-cart-loader').hide();
+    },
+  });
+
   function setProductValues() {
     var $container = $(this).closest('.js-product-container');
 

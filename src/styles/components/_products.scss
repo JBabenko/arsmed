@@ -4,7 +4,7 @@
   @include row-flex();
   justify-content: center;
   @include md(justify-content, space-evenly);
-  
+
   &__description {
     padding: 24px;
     @include border(top);
@@ -106,6 +106,13 @@
     }
   }
 
+  &__price-from {
+    &-text {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+  }
+
   &__currency-icon {
     font-size: 20px;
     width: 24px;
@@ -143,6 +150,19 @@
     }
 
     &:hover .product-card__cart-icon {
+      color: $brand;
+    }
+  }
+
+  &__more-btn {
+    width: auto;
+    height: auto;
+    padding: 8px 16px;
+    font-size: 16px;
+    color: $background-secondary;
+    transition: color 0.2s;
+
+    &:hover {
       color: $brand;
     }
   }
