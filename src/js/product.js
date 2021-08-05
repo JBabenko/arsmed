@@ -69,7 +69,8 @@ $(document).ready(function () {
   function addProductToCart() {
     var id = $(this).data('id');
     var $container = $(this).closest('.js-product-container');
-    var optionId = $container.find('.js-product-option:checked').attr('id');
+    var optionId = $container.find('.js-product-option:checked').attr('id')
+                || $(this).closest('.js-product-values').data('option-id');
     var qty = +$container.find('.js-product-qty-input').val() || 1;
     var cart = getCart();
     var itemInCart = cart.find(function (item) {

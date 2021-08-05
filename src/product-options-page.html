@@ -12,14 +12,14 @@
     <main class="main">
       //= template/breadcrumbs.html
       <div class="content-container">
-        <div class="product-page js-product-with-params">
+        <div class="product-page">
           <section class="product-page__info">
             <header class="product-page__header">
               <h1 class="product-page__header-title">Имплантат Submerged без имплантовода</h1>
               <p class="product-page__header-desc">Совместимый с шестигранным имплантатом с конусом Морзе
                 Внутреннее шестигранное соединение (конус 11° / шестигранное соединение 2.5мм)</p>
             </header>
-            <div class="product-page__main js-product-container">
+            <div class="product-page__main js-product-container js-product-with-params-container">
               <div class="product-page__params">
                 <div class="product-page__picture">
                   <img src="./images/abatment.jpg" alt="" class="product-page__img js-product-img">
@@ -27,8 +27,12 @@
                 //= template/product-params-stub.html
                 
               </div>
-              <div class="product-page__actions">
+              <div class="product-page__actions js-product-values">
                 <div class="product-page__price">
+                  <div class="product-page__article">
+                    Артикул:
+                    <span class="product-page__article-value js-product-article"></span>
+                  </div>
                   <div class="product-page__price-text product-page__price-text_primary">
                     <div class="product-page__currency-icon product-page__currency-icon_primary icon-rub js-currency-icon"></div>
                     <span class="js-product-price-primary"></span>
@@ -49,7 +53,6 @@
                     </div>
                   </div>
                   <button class="product-page__add-btn js-add-to-cart" data-id="100">
-                    <div class="product-page__add-count js-product-cart-count"></div>
                     <span class="icon-cart"></span>
                     Добавить
                   </button>
@@ -57,7 +60,7 @@
               </div>
             </div>
           </section>
-          <div class="products-table">
+          <div class="products-table js-product-table">
             <table class="products-table__table">
               <thead>
                 <tr class="products-table__row products-table__row_head">
@@ -68,46 +71,7 @@
                   <td class="products-table__col products-table__col_head"></td>
                 </tr>
               </thead>
-              <tbody class="products-table__body">
-                <tr class="products-table__row" data-product-params="d=2.5&l=10&c=2">
-                  <td class="products-table__col">AMB2210S</td>
-                  <td class="products-table__col">Имплантат Mini Plus шариковый 2.5 мм х 10 мм, шейка 2.0 мм</td>
-                  <td class="products-table__col">2 673 руб</td>
-                  <td class="products-table__col">
-                    <div class="cart-qty">
-                      <div class="cart-qty__btn cart-qty__btn_minus js-product-qty-btn" data-action="-1">
-                        <div class="icon-minus cart-qty__icon"></div>
-                      </div>
-                      <input type="number" value="1" class="cart-qty__input js-product-qty-input">
-                      <div class="cart-qty__btn cart-qty__btn_plus js-product-qty-btn" data-action="1">
-                        <div class="icon-plus cart-qty__icon"></div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="products-table__col">
-                    <button class="products-table__btn">Заказать</button>
-                  </td>
-                </tr>
-                <tr class="products-table__row" data-product-params="d=2.5&l=12&c=3">
-                  <td class="products-table__col">AMB2211S</td>
-                  <td class="products-table__col">Имплантат Mini Plus шариковый 2.5 мм х 12 мм, шейка 3.0 мм</td>
-                  <td class="products-table__col">2 673 руб</td>
-                  <td class="products-table__col">
-                    <div class="cart-qty">
-                      <div class="cart-qty__btn cart-qty__btn_minus js-product-qty-btn" data-action="-1">
-                        <div class="icon-minus cart-qty__icon"></div>
-                      </div>
-                      <input type="number" value="1" class="cart-qty__input js-product-qty-input">
-                      <div class="cart-qty__btn cart-qty__btn_plus js-product-qty-btn" data-action="1">
-                        <div class="icon-plus cart-qty__icon"></div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="products-table__col">
-                    <button class="products-table__btn">Заказать</button>
-                  </td>
-                </tr>
-              </tbody>
+              //= template/product-params-table-stub.html
             </table>
           </div>
         </div>

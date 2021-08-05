@@ -2183,7 +2183,14 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 24px 0
+  padding: 24px 0;
+
+  &__article {
+    font-size: 15px;
+    &-value {
+      font-weight: 600;
+    }
+  }
 }
 
 .product-page__info {
@@ -2525,6 +2532,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .product-params {
   max-width: 300px;
+  margin-top: 24px;
 
   &__param {
     &-wrapper {
@@ -2532,7 +2540,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     &-title {
-      font-size: 16px;
+      font-size: 18px;
       padding-bottom: 3px;
       border-bottom: 1px solid $brand;
     }
@@ -2549,13 +2557,13 @@ input[type=number]::-webkit-outer-spin-button {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    width: 36px;
-    height: 36px;
+    width: 48px;
+    height: 48px;
     border-radius: 24px;
     border: 1px solid $brand;
     margin-right: 6px;
     margin-top: 6px;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 0;
     cursor: pointer;
     transition: 0.2s;
@@ -2601,6 +2609,26 @@ input[type=number]::-webkit-outer-spin-button {
 
   &__table {
     width: 100%;
+  }
+
+  &__row {
+    &:hover {
+      background-color: $brand-very-light;
+    }
+
+    &_selected {
+      background-color: $brand-light;
+
+      &:hover {
+        background-color: $brand-light;
+      }
+    }
+
+    &_head {
+      &:hover {
+        background-color: $background-main
+      }
+    }
   }
 
   &__col {
