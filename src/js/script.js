@@ -33,6 +33,10 @@ $(document).ready(function () {
       $expandMenuBtn.toggleClass('active');
       $('.menu-background').fadeOut(200);
     }
+
+    if ($('.main-top_search').length && !target.closest('.main-top').length) {
+      $('.main-top').removeClass('main-top_search');
+    }
   })
 
   // Меню продукции
@@ -54,6 +58,20 @@ $(document).ready(function () {
 
   // Табы на странице товара
   $('.js-tabs').on('change', showActiveTabContent).first().change().attr('checked', 'checked');
+
+  // Поиск
+  const $mainTop = $('.js-main-top');
+  const $searchBtn = $('.js-search-btn');
+  const $searchInput = $('.js-search-input');
+  const $searchCloseBtn = $('.js-search-close-btn');
+
+  $searchBtn.on('click', function() {
+    $mainTop.addClass('main-top_search');
+    $searchInput.focus();
+  });
+  $searchCloseBtn.on('click', function() {
+    $('.main-top').removeClass('main-top_search');
+  });
 });
 
 function toggleProductsMenu(e) {
