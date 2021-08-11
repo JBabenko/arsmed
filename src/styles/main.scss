@@ -2133,8 +2133,16 @@ input[type=number]::-webkit-outer-spin-button {
   &_search {
     border: 1px solid $brand;
 
+    & .breadcrumbs {
+      display: none;
+    }
+
+    & .search {
+      width: 100%;
+    }
+
     & .search__input {
-      bottom: 0;
+      display: block;
     }
 
     & .search__control {
@@ -2152,20 +2160,19 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .search {
+  display: flex;
+  justify-content: space-between;
   height: 100%;
   padding: 12px 16px;
 
   &__input {
-    position: absolute;
-    left: 0;
-    bottom: 100%;
-    padding: 4px 16px;
+    display: none;
     font-size: 24px;
-    width: calc(100% - 120px);
+    flex-grow: 1;
     height: 100%;
 
     &_static {
-      bottom: 0;
+      display: block;
     }
   }
 

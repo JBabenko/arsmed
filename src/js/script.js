@@ -35,7 +35,7 @@ $(document).ready(function () {
     }
 
     if ($('.main-top_search').length && !target.closest('.main-top').length) {
-      $('.main-top').removeClass('main-top_search');
+      hideSearch();
     }
   })
 
@@ -69,9 +69,12 @@ $(document).ready(function () {
     $mainTop.addClass('main-top_search');
     $searchInput.focus();
   });
-  $searchCloseBtn.on('click', function() {
-    $('.main-top').removeClass('main-top_search');
-  });
+  $searchCloseBtn.on('click', hideSearch);
+
+  function hideSearch() {
+    $mainTop.removeClass('main-top_search');
+    $searchInput.val('');
+  };
 });
 
 function toggleProductsMenu(e) {
